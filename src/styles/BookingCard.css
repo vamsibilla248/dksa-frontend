@@ -1,0 +1,218 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+.booking-card{
+  background:#ffffff;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 8px 25px rgba(15,90,85,.08);
+  transition:.3s;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  overflow:hidden;
+  position:relative;
+}
+
+.booking-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(15,90,85,.15);
+}
+
+/* STATUS BORDER */
+
+.booking-card:has(.status-paid){
+  border-top:4px solid #22c55e;
+}
+
+.booking-card:has(.status-pending){
+  border-top:4px solid #ff6b1a;
+}
+
+/* HEADER */
+
+.booking-header{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+
+.booking-turf-name{
+  color:#0f5a55;
+  font-size:22px;
+  font-weight:800;
+  margin-bottom:4px;
+}
+
+.booking-id{
+  color:#94a3b8;
+  font-size:12px;
+  font-weight:600;
+}
+
+/* STATUS */
+
+.status-paid{
+  background:#dcfce7;
+  color:#15803d;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:700;
+}
+
+.status-pending{
+  background:#ffedd5;
+  color:#ea580c;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:700;
+}
+
+/* DATE */
+
+.booking-date-card{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+
+  border-radius:12px;
+  padding:12px;
+
+  color:#64748b;
+  font-size:13px;
+  font-weight:600;
+}
+
+/* SLOT COUNT */
+
+.slot-count-card{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  background:#fff8f3;
+  border:1px solid #ffd8bf;
+
+  border-radius:12px;
+  padding:12px;
+
+  color:#ff6b1a;
+  font-size:13px;
+  font-weight:700;
+}
+
+/* SLOT TIMES */
+
+.slot-times-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.slot-chip{
+  background:#e8f5f2;
+  color:#0f5a55;
+
+  border:1px solid #c7e6df;
+
+  padding:7px 12px;
+
+  border-radius:20px;
+
+  font-size:12px;
+  font-weight:700;
+}
+
+/* AMOUNT */
+
+.booking-amount-card{
+  background:linear-gradient(
+    135deg,
+    #f8fafc,
+    #eef7f5
+  );
+
+  border-radius:14px;
+  padding:15px;
+
+  border:1px solid #d6ebe7;
+}
+
+.amount-label{
+  color:#64748b;
+  font-size:12px;
+  font-weight:600;
+  margin-bottom:5px;
+}
+
+.amount-value{
+  color:#0f5a55;
+  font-size:34px;
+  font-weight:800;
+}
+
+/* BUTTON */
+
+.booking-actions{
+  margin-top:auto;
+}
+
+.receipt-btn{
+  width:100%;
+
+  border:none;
+
+  padding:13px;
+
+  border-radius:12px;
+
+  background:linear-gradient(
+    135deg,
+    #0f5a55,
+    #146b64
+  );
+
+  color:white;
+
+  font-size:14px;
+  font-weight:700;
+
+  cursor:pointer;
+  transition:.3s;
+}
+
+.receipt-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(15,90,85,.25);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .booking-card{
+    padding:16px;
+  }
+
+  .booking-turf-name{
+    font-size:18px;
+  }
+
+  .amount-value{
+    font-size:28px;
+  }
+
+  .slot-chip{
+    width:100%;
+    text-align:center;
+  }
+}

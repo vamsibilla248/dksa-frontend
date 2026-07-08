@@ -1,0 +1,105 @@
+.slot{
+
+  width:150px;
+
+  padding:18px;
+
+  border:none;
+
+  border-radius:15px;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:8px;
+
+  align-items:center;
+
+  font-weight:600;
+
+}
+
+.slot:hover:not(:disabled){
+
+  transform:translateY(-4px);
+
+}
+
+.slot-time{
+
+  font-size:18px;
+
+  font-weight:700;
+
+}
+
+.slot-price{
+
+  font-size:16px;
+
+}
+
+.slot-status{
+
+  font-size:13px;
+
+  font-weight:700;
+
+}
+
+/* Available */
+
+.available{
+
+  background:#f3f4f6;
+
+  color:#0f5a55;
+
+  border:2px solid #d9e8e5;
+
+}
+
+/* Selected */
+
+.selected{
+
+  background:#22c55e;
+
+  color:white;
+
+}
+
+/* Already Booked */
+
+.booked{
+
+  background:#ef4444;
+
+  color:white;
+
+  cursor:not-allowed;
+
+}
+
+/* Expired */
+
+.expired{
+
+  background:#9ca3af;
+
+  color:white;
+
+  cursor:not-allowed;
+
+}
+
+.slot:disabled{
+
+  opacity:.9;
+
+}

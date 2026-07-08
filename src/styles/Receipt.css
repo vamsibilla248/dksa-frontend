@@ -1,0 +1,306 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  
+  .receipt-page{
+    min-height:100vh;
+  
+    padding:25px 15px;
+  
+    background:
+    linear-gradient(
+      90deg,
+      #f3f1ed 50%,
+      #a8d3cc 50%
+    );
+  
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+  }
+  
+  .receipt-card{
+    width:100%;
+    max-width:650px;
+  
+    background:#ffffff;
+  
+    border-radius:24px;
+  
+    overflow:hidden;
+  
+    box-shadow:
+    0 12px 35px rgba(15,90,85,.10);
+  }
+  
+  /* HEADER */
+  
+  .receipt-header{
+    background:#0f5a55;
+  
+    color:white;
+  
+    padding:22px 25px;
+  }
+  
+  .receipt-header h1{
+    font-size:28px;
+  
+    font-weight:800;
+  
+    margin-bottom:5px;
+  }
+  
+  .receipt-subtitle{
+    color:rgba(255,255,255,.85);
+  
+    font-size:13px;
+  }
+  
+  .receipt-status{
+    display:inline-block;
+  
+    margin-top:12px;
+  
+    padding:6px 14px;
+  
+    border-radius:20px;
+  
+    font-size:11px;
+  
+    font-weight:700;
+  }
+  
+  .receipt-status.paid{
+    background:#dcfce7;
+    color:#15803d;
+  }
+  
+  .receipt-status.pending{
+    background:#ffedd5;
+    color:#ea580c;
+  }
+  
+  /* BODY */
+  
+  .receipt-body{
+    padding:18px;
+  }
+  
+  /* SECTIONS */
+  
+  .receipt-section{
+    background:#f8fafc;
+  
+    border:1px solid #e2e8f0;
+  
+    border-radius:14px;
+  
+    padding:15px 18px;
+  
+    margin-bottom:14px;
+  }
+  
+  .receipt-section h3{
+    color:#0f5a55;
+  
+    font-size:16px;
+  
+    margin-bottom:12px;
+  
+    font-weight:700;
+  }
+  
+  .receipt-info-row{
+    display:flex;
+  
+    justify-content:space-between;
+  
+    align-items:center;
+  
+    padding:10px 0;
+  
+    border-bottom:1px solid #e2e8f0;
+  }
+  
+  .receipt-info-row:last-child{
+    border-bottom:none;
+  }
+  
+  .receipt-info-row span{
+    color:#64748b;
+  
+    font-size:14px;
+  }
+  
+  .receipt-info-row strong{
+    color:#0f5a55;
+  
+    font-size:14px;
+  
+    font-weight:700;
+  }
+  
+  /* SLOT CHIPS */
+  
+  .slot-times-container{
+    display:flex;
+  
+    flex-wrap:wrap;
+  
+    gap:8px;
+  }
+  
+  .slot-chip{
+    background:#e7f4ef;
+  
+    color:#0f5a55;
+  
+    border:1px solid #cde6df;
+  
+    padding:7px 12px;
+  
+    border-radius:20px;
+  
+    font-size:12px;
+  
+    font-weight:700;
+  }
+  
+  /* AMOUNT */
+  
+  .amount-card{
+    text-align:center;
+  
+    background:#ff6b1a;
+  
+    color:white;
+  
+    border-radius:14px;
+  
+    padding:14px;
+  
+    margin-bottom:14px;
+  }
+  
+  .amount-card p{
+    font-size:13px;
+  
+    opacity:.95;
+  
+    margin-bottom:3px;
+  }
+  
+  .amount-card h2{
+    font-size:26px;
+  
+    font-weight:800;
+  }
+  
+  /* DOWNLOAD BUTTON */
+  
+  .download-btn{
+    width:100%;
+  
+    border:none;
+  
+    padding:14px;
+  
+    border-radius:12px;
+  
+    background:#0f5a55;
+  
+    color:white;
+  
+    font-size:14px;
+  
+    font-weight:700;
+  
+    cursor:pointer;
+  
+    transition:.3s;
+  }
+  
+  .download-btn:hover{
+    background:#146b64;
+  
+    transform:translateY(-2px);
+  }
+  
+  /* MOBILE */
+  
+  @media(max-width:768px){
+  
+    .receipt-page{
+      padding:10px;
+    }
+  
+    .receipt-card{
+      border-radius:18px;
+    }
+  
+    .receipt-header{
+      padding:18px;
+      text-align:center;
+    }
+  
+    .receipt-header h1{
+      font-size:22px;
+    }
+  
+    .receipt-subtitle{
+      font-size:12px;
+    }
+  
+    .receipt-body{
+      padding:14px;
+    }
+  
+    .receipt-section{
+      padding:12px;
+      margin-bottom:12px;
+    }
+  
+    .receipt-section h3{
+      font-size:15px;
+    }
+  
+    .receipt-info-row{
+      flex-direction:column;
+      align-items:flex-start;
+  
+      gap:4px;
+    }
+  
+    .receipt-info-row span{
+      font-size:13px;
+    }
+  
+    .receipt-info-row strong{
+      font-size:13px;
+  
+      word-break:break-word;
+    }
+  
+    .slot-chip{
+      font-size:11px;
+  
+      padding:6px 10px;
+    }
+  
+    .amount-card{
+      padding:12px;
+    }
+  
+    .amount-card h2{
+      font-size:22px;
+    }
+  
+    .download-btn{
+      padding:12px;
+  
+      font-size:13px;
+    }
+  }

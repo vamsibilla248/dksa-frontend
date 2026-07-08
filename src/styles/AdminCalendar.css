@@ -1,0 +1,9 @@
+.calendar-container {
+    padding: 20px;
+  }
+  
+  .calendar-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+  }

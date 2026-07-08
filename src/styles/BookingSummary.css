@@ -1,0 +1,365 @@
+/* ==========================================
+   BOOKING SUMMARY
+========================================== */
+
+.booking-summary{
+
+  width:100%;
+
+  background:#ffffff;
+
+  border-radius:18px;
+
+  padding:25px;
+
+  border:1px solid #e7efec;
+
+  box-shadow:0 8px 24px rgba(15,90,85,.08);
+
+}
+
+/* ==========================================
+ HEADER
+========================================== */
+
+.summary-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:25px;
+
+}
+
+.summary-title{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+}
+
+.summary-title svg{
+
+  color:#0f5a55;
+
+  font-size:22px;
+
+}
+
+.summary-title h2{
+
+  font-size:24px;
+
+  color:#103f43;
+
+  font-weight:700;
+
+}
+
+.summary-badge{
+
+  background:#ecfdf5;
+
+  color:#0f5a55;
+
+  padding:8px 16px;
+
+  border-radius:25px;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  border:1px solid #cceedd;
+
+}
+
+/* ==========================================
+ EMPTY STATE
+========================================== */
+
+.empty-summary{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  text-align:center;
+
+  padding:35px 15px;
+
+}
+
+.empty-icon{
+
+  width:70px;
+
+  height:70px;
+
+  border-radius:50%;
+
+  background:#eef8f6;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  margin-bottom:18px;
+
+}
+
+.empty-icon svg{
+
+  font-size:30px;
+
+  color:#0f5a55;
+
+}
+
+.empty-summary h3{
+
+  color:#103f43;
+
+  font-size:22px;
+
+  margin-bottom:8px;
+
+}
+
+.empty-summary p{
+
+  color:#7a8b88;
+
+  font-size:15px;
+
+  line-height:1.6;
+
+}
+
+/* ==========================================
+ SLOT LIST
+========================================== */
+
+.selected-slot-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+
+  margin-bottom:25px;
+
+}
+
+.slot-item{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:14px 16px;
+
+  border-radius:12px;
+
+  background:#f7fbfa;
+
+  border:1px solid #e4efec;
+
+  transition:.25s;
+
+}
+
+.slot-item:hover{
+
+  background:#eef8f6;
+
+  border-color:#bfe6d8;
+
+}
+
+.slot-left{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  font-size:16px;
+
+  font-weight:600;
+
+  color:#103f43;
+
+}
+
+.slot-left svg{
+
+  color:#0f5a55;
+
+}
+
+.slot-price{
+
+  font-size:18px;
+
+  font-weight:700;
+
+  color:#ff6b1a;
+
+}
+
+/* ==========================================
+ TOTAL
+========================================== */
+
+.summary-total{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-top:20px;
+
+  padding-top:20px;
+
+  border-top:2px dashed #dfe8e5;
+
+}
+
+.total-left{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  color:#103f43;
+
+  font-size:18px;
+
+  font-weight:700;
+
+}
+
+.total-left svg{
+
+  color:#22a06b;
+
+  font-size:22px;
+
+}
+
+.total-price{
+
+  font-size:30px;
+
+  font-weight:800;
+
+  color:#ff6b1a;
+
+}
+
+/* ==========================================
+ MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.booking-summary{
+
+  padding:18px;
+
+}
+
+.summary-header{
+
+  flex-direction:column;
+
+  align-items:flex-start;
+
+  gap:12px;
+
+}
+
+.summary-title h2{
+
+  font-size:20px;
+
+}
+
+.summary-badge{
+
+  font-size:12px;
+
+}
+
+.slot-item{
+
+  padding:12px;
+
+}
+
+.slot-left{
+
+  font-size:14px;
+
+}
+
+.slot-price{
+
+  font-size:16px;
+
+}
+
+.total-left{
+
+  font-size:16px;
+
+}
+
+.total-price{
+
+  font-size:24px;
+
+}
+
+.empty-summary{
+
+  padding:25px 10px;
+
+}
+
+.empty-icon{
+
+  width:60px;
+
+  height:60px;
+
+}
+
+.empty-icon svg{
+
+  font-size:24px;
+
+}
+
+}

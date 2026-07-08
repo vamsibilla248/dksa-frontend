@@ -1,0 +1,294 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    }
+    
+    .login-page{
+    min-height:100vh;
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+    background:
+    linear-gradient(
+    90deg,
+    #f3f1ed 50%,
+    #a8d3cc 50%
+    );
+    
+    padding:20px;
+    }
+    
+    .login-container{
+    
+    width:1100px;
+    max-width:100%;
+    
+    display:flex;
+    
+    border-radius:30px;
+    
+    overflow:hidden;
+    
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.15);
+    }
+    
+    .left-panel{
+    
+    flex:1;
+    
+    background:#f3f1ed;
+    
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    
+    padding:60px;
+    
+    position:relative;
+    }
+    
+    .right-panel{
+    
+    flex:1;
+    
+    background:#0f5a55;
+    
+    color:white;
+    
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    
+    padding:60px;
+    }
+    
+    .dots{
+    
+    position:absolute;
+    
+    top:40px;
+    left:40px;
+    
+    display:grid;
+    
+    grid-template-columns:
+    repeat(3,1fr);
+    
+    gap:20px;
+    }
+    
+    .dots span{
+    
+    width:24px;
+    height:24px;
+    
+    border-radius:50%;
+    
+    background:#ff6b1a;
+    }
+    
+    .left-logo{
+    
+    width:180px;
+    height:180px;
+    
+    object-fit:cover;
+    
+    border-radius:50%;
+    
+    border:5px solid #ff6b1a;
+    
+    background:white;
+    
+    padding:8px;
+    
+    margin-bottom:25px;
+    }
+    
+    .left-panel h1{
+    
+    font-size:72px;
+    
+    color:#0f5a55;
+    
+    font-weight:800;
+    }
+    
+    .left-panel p{
+    
+    color:#0f5a55;
+    
+    font-size:22px;
+    
+    margin-top:10px;
+    }
+    
+    .left-panel h3{
+    
+    color:#ff6b1a;
+    
+    margin-top:20px;
+    
+    letter-spacing:3px;
+    }
+    
+    .right-panel h2{
+    
+    font-size:56px;
+    
+    margin-bottom:10px;
+    }
+    
+    .subtitle{
+    
+    margin-bottom:30px;
+    
+    color:#d8ece9;
+    }
+    
+    .form-group{
+    
+    margin-bottom:20px;
+    }
+    
+    .form-group input{
+    
+    width:100%;
+    
+    padding:18px;
+    
+    border:1px solid rgba(255,255,255,0.3);
+    
+    border-radius:10px;
+    
+    background:transparent;
+    
+    color:white;
+    
+    font-size:16px;
+    
+    outline:none;
+    }
+    
+    .form-group input::placeholder{
+    color:#d8ece9;
+    }
+    
+    .login-btn{
+    
+    width:100%;
+    
+    padding:18px;
+    
+    border:none;
+    
+    border-radius:10px;
+    
+    background:#ff6b1a;
+    
+    color:white;
+    
+    font-size:20px;
+    
+    font-weight:700;
+    
+    cursor:pointer;
+    
+    transition:.3s;
+    }
+    
+    .login-btn:hover{
+    
+    background:#ff7f33;
+    
+    transform:translateY(-2px);
+    }
+    
+    .register-link{
+    
+    margin-top:25px;
+    
+    text-align:center;
+    }
+    
+    .register-link a{
+    
+    color:#ffb380;
+    
+    text-decoration:none;
+    
+    font-weight:600;
+    }
+    
+    .register-link a:hover{
+    color:white;
+    }
+    
+    @media(max-width:900px){
+
+        .login-container{
+          flex-direction:column;
+          width:100%;
+        }
+      
+        .left-panel{
+          padding:30px 20px;
+        }
+      
+        .right-panel{
+          padding:30px 20px;
+        }
+      
+        .dots{
+          display:none;
+        }
+      
+        .left-logo{
+          width:100px;
+          height:100px;
+          margin-bottom:15px;
+        }
+      
+        .left-panel h1{
+          font-size:38px;
+          text-align:center;
+        }
+      
+        .left-panel p{
+          font-size:14px;
+          text-align:center;
+        }
+      
+        .left-panel h3{
+          font-size:12px;
+          letter-spacing:2px;
+          text-align:center;
+        }
+      
+        .right-panel h2{
+          font-size:32px;
+          text-align:center;
+        }
+      
+        .subtitle{
+          text-align:center;
+          margin-bottom:20px;
+        }
+      
+        .form-group input{
+          padding:15px;
+          font-size:14px;
+        }
+      
+        .login-btn{
+          padding:15px;
+          font-size:16px;
+        }
+      }
+    

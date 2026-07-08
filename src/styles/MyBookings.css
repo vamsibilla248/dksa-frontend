@@ -1,0 +1,291 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+.my-bookings-page{
+  min-height:100vh;
+  padding:20px 30px;
+  background:#f6f8fa;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.my-bookings-header{
+  max-width:1400px;
+  margin:0 auto 25px;
+  text-align:center;
+}
+
+.my-bookings-header h1{
+  color:#0f5a55;
+  font-size:42px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.header-subtitle{
+  display:inline-block;
+  background:#0f5a55;
+  color:#ffffff;
+  padding:10px 20px;
+  border-radius:40px;
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:25px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.booking-stats{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.stat-card{
+  min-width:150px;
+  background:white;
+  padding:16px;
+  border-radius:16px;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.stat-card:hover{
+  transform:translateY(-3px);
+}
+
+.stat-number{
+  display:block;
+  font-size:24px;
+  font-weight:800;
+  color:#0f5a55;
+  margin-bottom:4px;
+}
+
+.stat-label{
+  color:#64748b;
+  font-size:13px;
+  font-weight:600;
+}
+
+.stat-card.paid{
+  border-top:4px solid #22c55e;
+}
+
+.stat-card.pending{
+  border-top:4px solid #f59e0b;
+}
+
+/* =========================
+   FILTER CARD
+========================= */
+
+.filter-card{
+  max-width:1400px;
+  margin:0 auto 25px;
+  background:#ffffff;
+  padding:18px;
+  border-radius:18px;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.filter-input,
+.filter-select,
+.filter-date{
+  height:48px;
+  border:2px solid #d8e5e2;
+  border-radius:12px;
+  background:#ffffff;
+  padding:0 14px;
+  font-size:14px;
+  color:#0f5a55;
+  outline:none;
+  transition:.3s;
+  min-width:180px;
+}
+
+.filter-input{
+  flex:1;
+  min-width:250px;
+}
+
+.filter-input::placeholder{
+  color:#64748b;
+}
+
+.filter-input:focus,
+.filter-select:focus,
+.filter-date:focus{
+  border-color:#ff6b1a;
+  box-shadow:0 0 12px rgba(255,107,26,.18);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.clear-btn,
+.download-btn{
+  height:48px;
+  padding:0 18px;
+  border:none;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.clear-btn{
+  background:#0f5a55;
+  color:white;
+}
+
+.clear-btn:hover{
+  background:#146b64;
+}
+
+.download-btn{
+  background:#ff6b1a;
+  color:white;
+}
+
+.download-btn:hover{
+  background:#ff7f33;
+  transform:translateY(-2px);
+}
+
+/* =========================
+   BOOKING LIST
+========================= */
+
+.booking-list{
+  max-width:1400px;
+  margin:0 auto;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,minmax(0,1fr));
+
+  gap:18px;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.no-bookings{
+  grid-column:1/-1;
+
+  background:white;
+  padding:40px 25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.no-bookings-icon{
+  font-size:60px;
+  margin-bottom:12px;
+}
+
+.no-bookings h3{
+  color:#0f5a55;
+  font-size:24px;
+  margin-bottom:8px;
+}
+
+.no-bookings p{
+  color:#64748b;
+  font-size:14px;
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media(max-width:1300px){
+
+  .booking-list{
+    grid-template-columns:
+    repeat(3,1fr);
+  }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
+
+  .booking-list{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .my-bookings-page{
+    padding:15px;
+  }
+
+  .my-bookings-header h1{
+    font-size:32px;
+  }
+
+  .header-subtitle{
+    font-size:13px;
+    padding:8px 16px;
+  }
+
+  .booking-stats{
+    gap:10px;
+  }
+
+  .stat-card{
+    min-width:120px;
+    padding:12px;
+  }
+
+  .filter-card{
+    padding:15px;
+  }
+
+  .booking-list{
+    grid-template-columns:1fr;
+  }
+
+  .filter-input,
+  .filter-select,
+  .filter-date,
+  .clear-btn,
+  .download-btn{
+    width:100%;
+    min-width:100%;
+  }
+
+}

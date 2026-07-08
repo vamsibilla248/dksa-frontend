@@ -1,0 +1,281 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  
+  .dashboard-page{
+
+    min-height:100%;
+
+    background:
+
+    radial-gradient(circle at top left,
+    rgba(34,197,94,.08),
+    transparent 35%),
+
+    radial-gradient(circle at top right,
+    rgba(59,130,246,.08),
+    transparent 40%),
+
+    linear-gradient(
+        180deg,
+        #f8fbfa,
+        #f3f7f6
+    );
+
+    border-radius:24px;
+
+    padding:45px;
+
+}
+  
+  /* ================= HEADER ================= */
+  
+  .dashboard-header{
+
+    max-width:900px;
+
+    margin:30px auto 60px;
+
+    text-align:center;
+
+}
+.dashboard-title{
+
+  font-size:62px;
+
+  font-weight:800;
+
+  color:#0f5a55;
+
+  margin-bottom:18px;
+
+  letter-spacing:-1px;
+
+}
+  
+.dashboard-subtitle{
+
+  font-size:22px;
+
+  color:#64748b;
+
+  line-height:1.7;
+
+  margin-bottom:35px;
+
+}
+  
+.search-box{
+
+  width:100%;
+
+  max-width:520px;
+
+  height:60px;
+
+  border:2px solid #dce8e5;
+
+  border-radius:16px;
+
+  background:#ffffff;
+
+  padding:0 24px;
+
+  font-size:17px;
+
+  transition:.3s;
+
+  box-shadow:
+      0 10px 25px rgba(15,90,85,.06);
+
+}
+  
+  .search-box:focus{
+    border-color:#ff6b1a;
+  
+    box-shadow:
+    0 0 15px rgba(255,107,26,.25);
+  }
+  
+  /* ================= TURF GRID ================= */
+  
+  .turf-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+  }
+  
+  /* ================= NO TURF FOUND ================= */
+  
+  .no-turf-found{
+    width:100%;
+    max-width:600px;
+  
+    margin:30px auto;
+  
+    padding:50px 30px;
+  
+    background:#ffffff;
+  
+    border-radius:24px;
+  
+    text-align:center;
+  
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+  }
+  
+  .no-turf-icon{
+    font-size:60px;
+    margin-bottom:15px;
+  }
+  
+  .no-turf-found h2{
+    color:#0f5a55;
+    margin-bottom:10px;
+  }
+  
+  .no-turf-found p{
+    color:#64748b;
+  }
+  
+  /* ================= TURF CARD ================= */
+  
+  .turf-card{
+    width:400px;
+    max-width:100%;
+  
+    background:#ffffff;
+  
+    border-radius:24px;
+  
+    overflow:hidden;
+  
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.08);
+  
+    transition:all .3s ease;
+  }
+  
+  .turf-card:hover{
+    transform:translateY(-8px);
+  
+    box-shadow:
+    0 20px 40px rgba(15,90,85,.15);
+  }
+  
+  .turf-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+  }
+  
+  .turf-card-body{
+    padding:22px;
+  }
+  
+  .turf-card h3{
+    color:#0f5a55;
+    font-size:26px;
+    font-weight:800;
+  
+    margin-bottom:10px;
+  }
+  
+  .turf-card p{
+    color:#64748b;
+    font-size:15px;
+  
+    margin-bottom:15px;
+  }
+  
+  .turf-type{
+    display:inline-block;
+  
+    background:#e0f2ef;
+    color:#0f5a55;
+  
+    padding:8px 16px;
+  
+    border-radius:25px;
+  
+    font-size:13px;
+    font-weight:700;
+  
+    margin-bottom:20px;
+  }
+  
+  .book-btn{
+    width:100%;
+  
+    padding:14px;
+  
+    border:none;
+  
+    border-radius:12px;
+  
+    background:#ff6b1a;
+  
+    color:#ffffff;
+  
+    font-size:16px;
+    font-weight:700;
+  
+    cursor:pointer;
+  
+    transition:.3s;
+  }
+  
+  .book-btn:hover{
+    background:#ff7f33;
+  
+    transform:translateY(-2px);
+  }
+  
+  .book-btn:active{
+    transform:scale(.98);
+  }
+  
+  /* ================= MOBILE ================= */
+  
+  @media(max-width:768px){
+  
+    .dashboard-page{
+      padding:20px;
+    }
+  
+    .dashboard-title{
+      font-size:34px;
+    }
+  
+    .dashboard-subtitle{
+      font-size:16px;
+    }
+  
+    .search-box{
+      max-width:100%;
+    }
+  
+    .turf-grid{
+      gap:20px;
+    }
+  
+    .turf-card{
+      width:100%;
+    }
+  
+    .turf-card img{
+      height:200px;
+    }
+  
+    .turf-card-body{
+      padding:18px;
+    }
+  
+    .turf-card h3{
+      font-size:22px;
+    }
+  }

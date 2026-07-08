@@ -1,0 +1,271 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.admin-turf-page{
+
+    min-height:100vh;
+
+    padding:35px 20px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #f3f1ed 50%,
+        #a8d3cc 50%
+    );
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.admin-turf-header{
+
+    text-align:center;
+
+    margin-bottom:35px;
+}
+
+.admin-turf-header h1{
+
+    font-size:52px;
+
+    color:#0f5a55;
+
+    font-weight:800;
+
+    margin-bottom:12px;
+}
+
+.admin-turf-header p{
+
+    display:inline-block;
+
+    background:#0f5a55;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:999px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    box-shadow:
+    0 8px 18px rgba(15,90,85,.15);
+}
+
+/* =========================
+   CARD
+========================= */
+
+.admin-turf-card{
+
+    width:100%;
+
+    max-width:650px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:
+    0 18px 40px rgba(15,90,85,.15);
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-group{
+
+    margin-bottom:22px;
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#0f5a55;
+
+    font-weight:700;
+
+    font-size:15px;
+}
+
+.form-group input{
+
+    width:100%;
+
+    height:56px;
+
+    border:2px solid #d9e7e4;
+
+    border-radius:14px;
+
+    padding:0 18px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.form-group input:focus{
+
+    border-color:#ff6b1a;
+
+    box-shadow:
+    0 0 12px rgba(255,107,26,.15);
+}
+
+/* =========================
+   FILE INPUT
+========================= */
+
+.file-input{
+
+    padding:15px !important;
+
+    height:auto !important;
+
+    cursor:pointer;
+
+    background:#f8fafc;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.preview-section{
+
+    margin:30px 0;
+
+    text-align:center;
+}
+
+.preview-image{
+
+    width:100%;
+
+    max-width:420px;
+
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    border:4px solid #e2e8f0;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.12);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.save-turf-btn{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#ff6b1a;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:
+    0 8px 20px rgba(255,107,26,.25);
+}
+
+.save-turf-btn:hover{
+
+    background:#ff7f33;
+
+    transform:translateY(-2px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+.admin-turf-page{
+
+padding:20px 15px;
+
+}
+
+.admin-turf-header h1{
+
+font-size:36px;
+
+}
+
+.admin-turf-header p{
+
+font-size:14px;
+
+padding:10px 18px;
+
+}
+
+.admin-turf-card{
+
+padding:22px;
+
+border-radius:20px;
+
+}
+
+.preview-image{
+
+height:220px;
+
+}
+
+.save-turf-btn{
+
+height:52px;
+
+font-size:15px;
+
+}
+
+}

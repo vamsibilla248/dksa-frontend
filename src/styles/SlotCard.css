@@ -1,0 +1,211 @@
+/* ==========================================
+   SLOT CARD
+========================================== */
+
+.slot-card{
+
+    width:125px;
+
+    height:72px;
+
+    background:#ffffff;
+
+    border:1px solid #dfe8e5;
+
+    border-radius:10px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+
+}
+
+.slot-card:hover:not(:disabled){
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 18px rgba(0,0,0,.10);
+
+    border-color:#0f5a55;
+
+}
+
+/* ==========================================
+   TIME
+========================================== */
+
+.slot-card-time{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:#103f43;
+
+}
+
+.slot-card-time svg{
+
+    font-size:15px;
+
+    color:#0f5a55;
+
+}
+
+/* ==========================================
+   PRICE
+========================================== */
+
+.slot-card-price{
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:#ff6b1a;
+
+}
+
+/* ==========================================
+   AVAILABLE
+========================================== */
+
+.available{
+
+    background:#ffffff;
+
+}
+
+/* ==========================================
+   SELECTED
+========================================== */
+
+.selected{
+
+    background:#19b46b;
+
+    border-color:#19b46b;
+
+}
+
+.selected .slot-card-time,
+
+.selected .slot-card-time svg,
+
+.selected .slot-card-price{
+
+    color:white;
+
+}
+
+/* ==========================================
+   BOOKED
+========================================== */
+
+.booked{
+
+    background:#ef4444;
+
+    border-color:#ef4444;
+
+    cursor:not-allowed;
+
+}
+
+.booked .slot-card-time,
+
+.booked .slot-card-time svg,
+
+.booked .slot-card-price{
+
+    color:white;
+
+}
+
+/* ==========================================
+   EXPIRED
+========================================== */
+
+.expired{
+
+    background:#9ca3af;
+
+    border-color:#9ca3af;
+
+    cursor:not-allowed;
+
+}
+
+.expired .slot-card-time,
+
+.expired .slot-card-time svg,
+
+.expired .slot-card-price{
+
+    color:white;
+
+}
+
+/* ==========================================
+   DISABLED
+========================================== */
+
+.slot-card:disabled{
+
+    opacity:.95;
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.slot-card{
+
+    width:95px;
+
+    height:62px;
+
+    gap:5px;
+
+}
+
+.slot-card-time{
+
+    font-size:13px;
+
+}
+
+.slot-card-time svg{
+
+    font-size:12px;
+
+}
+
+.slot-card-price{
+
+    font-size:12px;
+
+}
+
+}

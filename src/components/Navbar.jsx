@@ -13,7 +13,7 @@ import {
 
 import { useAuth } from "../context/AuthContext";
 
-import logo from "../logo/dksa-logo.png";
+import logo from "../logo/dksa.png";
 
 import "../styles/Navbar.css";
 
@@ -46,7 +46,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-left">
           <div className="navbar-brand-section">
-            {/* <img src={logo} alt="DKSA" className="navbar-logo" />*/}
+            <img src={logo} alt="DKSA" className="navbar-logo" />
 
             <div className="brand-text">
               <h2>DKSA</h2>

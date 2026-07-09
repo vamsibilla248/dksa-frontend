@@ -10,6 +10,8 @@ import { getSlotsByDate } from "../services/slotService";
 
 import { createOrder, verifyPayment } from "../services/paymentService";
 
+import { FaClock, FaMoneyBillWave, FaTimesCircle } from "react-icons/fa";
+
 import "../styles/BookingPage.css";
 
 function BookingPage() {
@@ -180,7 +182,7 @@ function BookingPage() {
 
         order_id: order.orderId,
 
-        name: "DKSA Sports Arena",
+        name: "DKSA Sports Acadamy",
 
         description: "Turf Slot Booking",
 
@@ -265,7 +267,15 @@ function BookingPage() {
 
       setPaymentLoading(false);
     }
-  }; /* ==========================================
+  };
+
+  const handleRemoveSlot = (slotId) => {
+    setSelectedSlots((prev) => prev.filter((slot) => slot.id !== slotId));
+  };
+
+  /* ==========================================
+
+  
   JSX
 ========================================== */
 
@@ -277,7 +287,7 @@ function BookingPage() {
 
       <section className="booking-hero">
         <div className="hero-left">
-          <span className="booking-tag">🏏 DKSA Sports Arena</span>
+          <span className="booking-tag">🏏 DKSA Sports Acadamy</span>
 
           <h1>Book Your Turf Slot</h1>
 
@@ -425,7 +435,11 @@ function BookingPage() {
               BOOKING SUMMARY
           ========================================== */}
           <div className="booking-summary-wrapper">
-            <BookingSummary selectedSlots={selectedSlots} />
+            <BookingSummary
+              selectedSlots={selectedSlots}
+              totalAmount={totalAmount}
+              onRemoveSlot={handleRemoveSlot}
+            />
 
             <button
               className={`confirm-booking-btn ${

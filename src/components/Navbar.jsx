@@ -1,118 +1,79 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import {
+  FaBars,
+  FaTimes,
   FaHome,
   FaCalendarAlt,
   FaUser,
   FaLock,
-  FaBars,
-  FaChevronDown,
+  FaUsers,
 } from "react-icons/fa";
 
 import { useAuth } from "../context/AuthContext";
 
+import logo from "../logo/dksa-logo.png";
+
 import "../styles/Navbar.css";
 
 function Navbar() {
-  const { role, logout, username } = useAuth();
+  const { role, username, logout } = useAuth();
 
   const navigate = useNavigate();
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const profileRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        profileRef.current &&
-        !profileRef.current.contains(event.target)
-      ) {
-        setMenuOpen(false);
-      }
-    };
-
-    document.addEventListener(
-      "mousedown",
-      handleClickOutside
-    );
-
-    return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside
-      );
-    };
-  }, []);
-
   const handleLogout = () => {
     logout();
+
     navigate("/");
   };
 
-  const getLinkClass = ({ isActive }) =>
-    isActive ? "active-link" : "";
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  const activeClass = ({ isActive }) => (isActive ? "active-link" : "");
 
   return (
     <>
+      {/* Overlay */}
+      {menuOpen && <div className="mobile-overlay" onClick={closeMenu} />}
       {/* ==========================
           DESKTOP NAVBAR
       ========================== */}
-
       <nav className="navbar">
-        {/* LEFT */}
-
         <div className="navbar-left">
-          {/* LOGO */}
-
           <div className="navbar-brand-section">
-            <img
-              src="/src/logo/dksa-logo.png"
-              alt="DKSA"
-              className="navbar-logo"
-            />
+            {/* <img src={logo} alt="DKSA" className="navbar-logo" />*/}
 
             <div className="brand-text">
               <h2>DKSA</h2>
 
-              <span>SPORTS ARENA</span>
+              <span>SPORTS ACADAMY</span>
             </div>
           </div>
-
-          {/* NAVIGATION */}
 
           <div className="navbar-links">
             {role === "CUSTOMER" && (
               <>
-                <NavLink
-                  to="/dashboard"
-                  className={getLinkClass}
-                >
+                <NavLink to="/dashboard" className={activeClass}>
                   <FaHome />
                   Dashboard
                 </NavLink>
 
-                <NavLink
-                  to="/my-bookings"
-                  className={getLinkClass}
-                >
+                <NavLink to="/my-bookings" className={activeClass}>
                   <FaCalendarAlt />
                   My Bookings
                 </NavLink>
 
-                <NavLink
-                  to="/profile"
-                  className={getLinkClass}
-                >
+                <NavLink to="/profile" className={activeClass}>
                   <FaUser />
                   Profile
                 </NavLink>
 
-                <NavLink
-                  to="/change-password"
-                  className={getLinkClass}
-                >
+                <NavLink to="/change-password" className={activeClass}>
                   <FaLock />
                   Change Password
                 </NavLink>
@@ -121,60 +82,27 @@ function Navbar() {
 
             {role === "ADMIN" && (
               <>
-                <NavLink
-                  to="/admin/dashboard"
-                  className={getLinkClass}
-                >
+                <NavLink to="/admin/dashboard" className={activeClass}>
                   <FaHome />
                   Dashboard
                 </NavLink>
 
-                <NavLink
-                  to="/admin/turfs"
-                  className={getLinkClass}
-                >
-                  🌱 Turfs
+                <NavLink to="/admin/users" className={activeClass}>
+                  <FaUsers />
+                  Users
                 </NavLink>
 
-                <NavLink
-                  to="/admin/slots"
-                  className={getLinkClass}
-                >
-                  🕒 Slots
-                </NavLink>
-
-                <NavLink
-                  to="/admin/bookings"
-                  className={getLinkClass}
-                >
-                  📖 Bookings
-                </NavLink>
-
-                <NavLink
-                  to="/admin/users"
-                  className={getLinkClass}
-                >
-                  👥 Users
-                </NavLink>
-
-                <NavLink
-                  to="/admin/calendar"
-                  className={getLinkClass}
-                >
-                  📅 Calendar
+                <NavLink to="/admin/bookings" className={activeClass}>
+                  <FaCalendarAlt />
+                  Bookings
                 </NavLink>
               </>
             )}
           </div>
         </div>
 
-        {/* RIGHT */}
-
         <div className="navbar-right">
-          <div
-            className="user-chip"
-            ref={profileRef}
-          >
+          <div className="user-chip">
             <div className="user-avatar">
               {username?.charAt(0)?.toUpperCase()}
             </div>
@@ -184,91 +112,70 @@ function Navbar() {
 
               <span>{username}</span>
             </div>
-
-            <FaChevronDown className="arrow-icon" />
           </div>
 
-          <button
-            className="logout-btn"
-            onClick={handleLogout}
-          >
+          <button className="logout-btn" onClick={handleLogout}>
             Logout
           </button>
         </div>
-      </nav>      {/* =====================================
+      </nav>
+      {/* ==========================
           MOBILE NAVBAR
-      ===================================== */}
-
+      ========================== */}
       <div className="mobile-navbar">
-
-        <button
-          className="menu-btn"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
+        <button className="menu-btn" onClick={() => setMenuOpen(true)}>
           <FaBars />
         </button>
 
         <div className="mobile-brand">
-
-          <img
-            src="/src/logo/dksa-logo.png"
-            alt="DKSA"
-            className="mobile-logo"
-          />
+          <img src={logo} alt="DKSA" className="mobile-logo" />
 
           <div className="mobile-brand-text">
-
             <h3>DKSA</h3>
 
-            <span>SPORTS ARENA</span>
-
+            <span>SPORTS ACADAMY</span>
           </div>
-
         </div>
 
         <div className="mobile-user-chip">
-
           {username?.charAt(0)?.toUpperCase()}
-
         </div>
-
       </div>
-
-      {/* =====================================
-          MOBILE MENU
-      ===================================== */}
-
+      {/* ==========================
+  MOBILE MENU
+========================== */}
       {menuOpen && (
-
         <div className="mobile-menu">
-
           <div className="mobile-user-info">
-
             <div className="mobile-user-avatar">
-
               {username?.charAt(0)?.toUpperCase()}
-
             </div>
 
             <div className="mobile-user-details">
-
               <h4>{username}</h4>
 
               <p>{role}</p>
-
             </div>
 
+            <button
+              className="menu-btn"
+              onClick={closeMenu}
+              style={{
+                marginLeft: "auto",
+                width: "40px",
+                height: "40px",
+              }}
+            >
+              <FaTimes />
+            </button>
           </div>
-
-          {/* CUSTOMER MENU */}
 
           {role === "CUSTOMER" && (
             <>
-
               <NavLink
                 to="/dashboard"
-                className={getLinkClass}
-                onClick={() => setMenuOpen(false)}
+                className={activeClass}
+                onClick={closeMenu}
               >
                 <FaHome />
                 <span>Dashboard</span>
@@ -276,8 +183,8 @@ function Navbar() {
 
               <NavLink
                 to="/my-bookings"
-                className={getLinkClass}
-                onClick={() => setMenuOpen(false)}
+                className={activeClass}
+                onClick={closeMenu}
               >
                 <FaCalendarAlt />
                 <span>My Bookings</span>
@@ -285,8 +192,8 @@ function Navbar() {
 
               <NavLink
                 to="/profile"
-                className={getLinkClass}
-                onClick={() => setMenuOpen(false)}
+                className={activeClass}
+                onClick={closeMenu}
               >
                 <FaUser />
                 <span>Profile</span>
@@ -294,93 +201,53 @@ function Navbar() {
 
               <NavLink
                 to="/change-password"
-                className={getLinkClass}
-                onClick={() => setMenuOpen(false)}
+                className={activeClass}
+                onClick={closeMenu}
               >
                 <FaLock />
                 <span>Change Password</span>
               </NavLink>
-
             </>
           )}
 
-          {/* ADMIN MENU */}
-
           {role === "ADMIN" && (
             <>
-
               <NavLink
                 to="/admin/dashboard"
-                className={getLinkClass}
-                onClick={() => setMenuOpen(false)}
+                className={activeClass}
+                onClick={closeMenu}
               >
                 <FaHome />
                 <span>Dashboard</span>
               </NavLink>
 
               <NavLink
-                to="/admin/turfs"
-                className={getLinkClass}
-                onClick={() => setMenuOpen(false)}
-              >
-                🌱
-                <span>Turfs</span>
-              </NavLink>
-
-              <NavLink
-                to="/admin/slots"
-                className={getLinkClass}
-                onClick={() => setMenuOpen(false)}
-              >
-                🕒
-                <span>Slots</span>
-              </NavLink>
-
-              <NavLink
-                to="/admin/bookings"
-                className={getLinkClass}
-                onClick={() => setMenuOpen(false)}
-              >
-                📖
-                <span>Bookings</span>
-              </NavLink>
-
-              <NavLink
                 to="/admin/users"
-                className={getLinkClass}
-                onClick={() => setMenuOpen(false)}
+                className={activeClass}
+                onClick={closeMenu}
               >
-                👥
+                <FaUsers />
                 <span>Users</span>
               </NavLink>
 
               <NavLink
-                to="/admin/calendar"
-                className={getLinkClass}
-                onClick={() => setMenuOpen(false)}
+                to="/admin/bookings"
+                className={activeClass}
+                onClick={closeMenu}
               >
-                📅
-                <span>Calendar</span>
+                <FaCalendarAlt />
+                <span>Bookings</span>
               </NavLink>
-
             </>
           )}
 
-          <button
-            className="mobile-logout-btn"
-            onClick={handleLogout}
-          >
+          <button className="mobile-logout-btn" onClick={handleLogout}>
             Logout
           </button>
-
         </div>
-
-      )}
-
+      )}{" "}
     </>
-
   );
-
 }
 
 export default Navbar;

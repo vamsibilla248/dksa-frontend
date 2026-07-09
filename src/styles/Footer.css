@@ -1,122 +1,227 @@
+/* =========================================================
+   FOOTER
+========================================================= */
+
 .footer{
-    background:#0f5a55;
-  
-    color:white;
-  
-    border-top:4px solid #ff6b1a;
-  
-    margin-top:0;
-  }
-  
+  background:#0f5a55;
+  color:#ffffff;
+  border-top:3px solid #ff6b1a;
+  margin-top:30px;
+}
+
+/* ===========================
+ CONTAINER
+=========================== */
+
+.footer-container{
+  max-width:1400px;
+  margin:0 auto;
+  padding:20px 30px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+}
+
+/* ===========================
+ BRAND
+=========================== */
+
+.footer-brand{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.footer-brand h2{
+  color:#ffffff;
+  font-size:34px;
+  font-weight:800;
+  margin-bottom:6px;
+}
+
+.footer-brand p{
+  color:rgba(255,255,255,.9);
+  font-size:18px;
+  margin:0;
+}
+
+/* ===========================
+ TITLES
+=========================== */
+
+.footer-title{
+
+  color:#ff8a1c;
+
+  font-size:17px;
+
+  font-weight:700;
+
+  margin-bottom:10px;
+
+}
+
+/* ===========================
+ LINKS
+=========================== */
+
+.footer-links{
+
+  list-style:none;
+
+  padding:0;
+
+  margin:0;
+
+}
+
+.footer-links li{
+
+  margin-bottom:6px;
+
+}
+
+.footer-links a{
+
+  color:rgba(255,255,255,.85);
+
+  text-decoration:none;
+
+  font-size:14px;
+
+  transition:.25s;
+
+}
+
+.footer-links a:hover{
+
+  color:#ff8a1c;
+
+}
+
+/* ===========================
+ CONTACT
+=========================== */
+
+.footer-contact p{
+
+  color:rgba(255,255,255,.85);
+
+  font-size:14px;
+
+  margin-bottom:6px;
+
+  line-height:1.5;
+
+}
+
+/* ===========================
+ BOTTOM
+=========================== */
+
+.footer-bottom{
+
+  border-top:1px solid rgba(255,255,255,.12);
+
+  padding:12px 20px;
+
+  text-align:center;
+
+  color:rgba(255,255,255,.7);
+
+  font-size:13px;
+
+}
+
+/* =========================================================
+ TABLET
+========================================================= */
+
+@media (max-width:992px){
+
   .footer-container{
-    max-width:1200px;
-  
-    margin:auto;
-  
-    padding:35px 30px;
-  
-    display:grid;
-  
-    grid-template-columns:
-    2fr 1fr 1fr;
-  
-    gap:50px;
+
+      grid-template-columns:1fr 1fr;
+
+      gap:25px;
+
   }
-  
-  .footer-brand h2{
-    font-size:34px;
-  
-    font-weight:800;
-  
-    margin-bottom:10px;
-  
-    color:white;
+
+}
+
+/* =========================================================
+ MOBILE
+========================================================= */
+
+@media (max-width:768px){
+
+  .footer{
+
+      margin-top:20px;
+
   }
-  
-  .footer-brand p{
-    color:rgba(255,255,255,.85);
-  
-    line-height:1.8;
-  
-    font-size:15px;
-  }
-  
-  .footer-title{
-    color:#ff6b1a;
-  
-    font-size:18px;
-  
-    font-weight:700;
-  
-    margin-bottom:16px;
-  }
-  
-  .footer-links{
-    list-style:none;
-  }
-  
-  .footer-links li{
-    margin-bottom:10px;
-  }
-  
-  .footer-links a{
-    color:rgba(255,255,255,.85);
-  
-    text-decoration:none;
-  
-    transition:.3s;
-  }
-  
-  .footer-links a:hover{
-    color:#ff6b1a;
-  
-    padding-left:5px;
-  }
-  
-  .footer-contact p{
-    color:rgba(255,255,255,.85);
-  
-    margin-bottom:10px;
-  
-    font-size:14px;
-  }
-  
-  .footer-bottom{
-    border-top:1px solid rgba(255,255,255,.15);
-  
-    padding:18px;
-  
-    text-align:center;
-  
-    color:rgba(255,255,255,.7);
-  
-    font-size:14px;
-  }
-  
-  /* Mobile */
-  
-  @media(max-width:768px){
-  
-    .footer-container{
-  
+
+  .footer-container{
+
       grid-template-columns:1fr;
-  
+
       text-align:center;
-  
-      gap:30px;
-  
-      padding:30px 20px;
-    }
-  
-    .footer-brand h2{
-      font-size:28px;
-    }
-  
-    .footer-title{
-      margin-bottom:12px;
-    }
-  
-    .footer-links a:hover{
-      padding-left:0;
-    }
+
+      padding:18px 18px;
+
+      gap:20px;
+
   }
+
+  .footer-brand h2{
+
+      font-size:24px;
+
+  }
+
+  .footer-brand p{
+
+      font-size:13px;
+
+  }
+
+  .footer-title{
+
+      font-size:16px;
+
+      margin-bottom:8px;
+
+  }
+
+  .footer-links li{
+
+      margin-bottom:5px;
+
+  }
+
+  .footer-links a{
+
+      font-size:13px;
+
+  }
+
+  .footer-contact p{
+
+      font-size:13px;
+
+      margin-bottom:5px;
+
+  }
+
+  .footer-bottom{
+
+      padding:10px;
+
+      font-size:12px;
+
+  }
+
+}

@@ -1,12 +1,12 @@
-/* =====================================================
+/* =========================================================
    GOOGLE FONT
-===================================================== */
+========================================================= */
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
-/* =====================================================
+/* =========================================================
    RESET
-===================================================== */
+========================================================= */
 
 *{
     margin:0;
@@ -15,58 +15,47 @@
 }
 
 body{
-
     font-family:"Inter",sans-serif;
-
-    background:#f5f8f8;
-
+    background:#f5f7f9;
 }
 
-/* =====================================================
-   NAVBAR
-===================================================== */
+/* =========================================================
+   DESKTOP NAVBAR
+========================================================= */
 
 .navbar{
 
-    width:95%;
+  position:fixed;
 
-    max-width:1500px;
+  top:0;
+  left:0;
+  right:0;
 
-    height:78px;
+  width:100%;
 
-    margin:20px auto;
+  height:70px;
 
-    padding:0 30px;
+  background:#0f5a55;
 
-    display:flex;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 
-    justify-content:space-between;
+  padding:0 40px;
 
-    align-items:center;
+  margin:0;
 
-    border-radius:20px;
+  border-radius:0;
 
-    background:linear-gradient(
-        90deg,
-        #0b3d3b,
-        #0f5a55,
-        #0b3d3b
-    );
+  box-shadow:0 2px 10px rgba(0,0,0,.15);
 
-    box-shadow:
-        0 15px 35px rgba(15,90,85,.18);
-
-    position:sticky;
-
-    top:15px;
-
-    z-index:999;
+  z-index:9999;
 
 }
 
-/* =====================================================
+/* =========================================================
    LEFT
-===================================================== */
+========================================================= */
 
 .navbar-left{
 
@@ -78,9 +67,9 @@ body{
 
 }
 
-/* =====================================================
-   BRAND
-===================================================== */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .navbar-brand-section{
 
@@ -94,9 +83,9 @@ body{
 
 .navbar-logo{
 
-    width:58px;
+    width:56px;
 
-    height:58px;
+    height:56px;
 
     object-fit:contain;
 
@@ -114,438 +103,274 @@ body{
 
     color:#ffffff;
 
-    font-size:28px;
+    font-size:33px;
 
     font-weight:800;
 
     line-height:1;
 
-    letter-spacing:1px;
-
 }
 
 .brand-text span{
 
-    color:#ff8c00;
+    color:#ff9d22;
 
     font-size:11px;
 
     font-weight:700;
 
-    letter-spacing:2px;
+    letter-spacing:3px;
 
-    margin-top:3px;
-
-    text-transform:uppercase;
+    margin-top:4px;
 
 }
 
-/* =====================================================
-   NAVIGATION LINKS
-===================================================== */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 .navbar-links{
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  gap:10px;
+    gap:10px;
 
 }
 
 .navbar-links a{
 
-  position:relative;
+    display:flex;
 
-  display:flex;
+    align-items:center;
 
-  align-items:center;
+    gap:8px;
 
-  gap:8px;
+    text-decoration:none;
 
-  padding:12px 16px;
+    color:#ffffff;
 
-  text-decoration:none;
+    padding:13px 18px;
 
-  color:rgba(255,255,255,.85);
+    border-radius:12px;
 
-  font-size:15px;
+    font-size:15px;
 
-  font-weight:600;
+    font-weight:600;
 
-  border-radius:12px;
-
-  transition:all .30s ease;
+    transition:.30s;
 
 }
-
-/* =====================================================
- ICON
-===================================================== */
 
 .navbar-links a svg{
 
-  font-size:16px;
+    font-size:15px;
 
 }
-
-/* =====================================================
- HOVER
-===================================================== */
 
 .navbar-links a:hover{
 
-  color:#ffffff;
-
-  background:rgba(255,255,255,.08);
-
-  transform:translateY(-2px);
+    background:rgba(255,255,255,.10);
 
 }
 
-/* =====================================================
- ACTIVE LINK
-===================================================== */
+/* Active Link */
 
-.navbar-links .active-link{
+.active-link{
 
-  color:#ffffff;
-
-  background:rgba(255,255,255,.12);
+    background:rgba(255,255,255,.14);
 
 }
 
-/* Orange Top Border */
-
-.navbar-links .active-link::before{
-
-  content:"";
-
-  position:absolute;
-
-  top:-8px;
-
-  left:18px;
-
-  right:18px;
-
-  height:4px;
-
-  border-radius:10px;
-
-  background:#ff7a00;
-
-}
-
-/* =====================================================
- UNDERLINE ANIMATION
-===================================================== */
-
-.navbar-links a::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:50%;
-
-  bottom:4px;
-
-  width:0;
-
-  height:2px;
-
-  background:#ff7a00;
-
-  transition:.35s;
-
-  transform:translateX(-50%);
-
-  border-radius:5px;
-
-}
-
-.navbar-links a:hover::after{
-
-  width:70%;
-
-}
-
-.navbar-links .active-link::after{
-
-  width:70%;
-
-}
-
-/* =====================================================
- LINK TEXT
-===================================================== */
-
-.navbar-links a span{
-
-  white-space:nowrap;
-
-}
-
-/* =====================================================
-   RIGHT SECTION
-===================================================== */
+/* =========================================================
+   RIGHT
+========================================================= */
 
 .navbar-right{
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  gap:18px;
+    gap:18px;
 
 }
 
-/* =====================================================
- USER CHIP
-===================================================== */
+/* =========================================================
+   USER CHIP
+========================================================= */
 
 .user-chip{
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  gap:12px;
+    gap:12px;
 
-  padding:8px 16px;
+    background:rgba(255,255,255,.08);
 
-  background:rgba(255,255,255,.10);
+    padding:7px 14px;
 
-  border:1px solid rgba(255,255,255,.12);
+    border-radius:40px;
 
-  border-radius:50px;
+    cursor:pointer;
 
-  cursor:pointer;
-
-  transition:.30s;
+    transition:.3s;
 
 }
 
 .user-chip:hover{
 
-  background:rgba(255,255,255,.18);
-
-  transform:translateY(-2px);
+    background:rgba(255,255,255,.14);
 
 }
-
-/* =====================================================
- USER AVATAR
-===================================================== */
 
 .user-avatar{
 
-  width:45px;
+    width:46px;
 
-  height:45px;
+    height:46px;
 
-  border-radius:50%;
+    border-radius:50%;
 
-  background:linear-gradient(
-      135deg,
-      #ff8c00,
-      #ff6b00
-  );
+    background:#ff7b00;
 
-  color:white;
+    color:white;
 
-  display:flex;
+    display:flex;
 
-  justify-content:center;
+    align-items:center;
 
-  align-items:center;
+    justify-content:center;
 
-  font-size:18px;
+    font-size:18px;
 
-  font-weight:700;
-
-  box-shadow:
-      0 6px 15px rgba(255,107,0,.30);
+    font-weight:700;
 
 }
 
-/* =====================================================
- USER INFO
-===================================================== */
-
 .user-info{
 
-  display:flex;
+    display:flex;
 
-  flex-direction:column;
-
-  line-height:1.2;
+    flex-direction:column;
 
 }
 
 .user-info small{
 
-  color:rgba(255,255,255,.70);
+    color:#d7ece8;
 
-  font-size:11px;
-
-  font-weight:500;
+    font-size:11px;
 
 }
 
 .user-info span{
 
-  color:#ffffff;
+    color:#ffffff;
 
-  font-size:15px;
+    font-size:15px;
 
-  font-weight:700;
-
-  max-width:160px;
-
-  overflow:hidden;
-
-  white-space:nowrap;
-
-  text-overflow:ellipsis;
+    font-weight:700;
 
 }
-
-/* =====================================================
- DROPDOWN ARROW
-===================================================== */
 
 .arrow-icon{
 
-  color:#ffffff;
+    color:white;
 
-  font-size:13px;
-
-  transition:.30s;
+    font-size:14px;
 
 }
 
-.user-chip:hover .arrow-icon{
-
-  transform:rotate(180deg);
-
-}
-
-/* =====================================================
- LOGOUT BUTTON
-===================================================== */
+/* =========================================================
+   LOGOUT BUTTON
+========================================================= */
 
 .logout-btn{
 
-  border:none;
+    border:none;
 
-  outline:none;
+    height:48px;
 
-  background:linear-gradient(
-      135deg,
-      #ff8c00,
-      #ff6b00
-  );
+    padding:0 24px;
 
-  color:#ffffff;
+    border-radius:12px;
 
-  padding:12px 22px;
+    background:#ff7b00;
 
-  border-radius:12px;
+    color:#ffffff;
 
-  font-size:15px;
+    font-size:15px;
 
-  font-weight:700;
+    font-weight:700;
 
-  cursor:pointer;
+    cursor:pointer;
 
-  transition:.30s;
-
-  box-shadow:
-      0 8px 18px rgba(255,107,0,.28);
+    transition:.3s;
 
 }
-
-/* =====================================================
- LOGOUT HOVER
-===================================================== */
 
 .logout-btn:hover{
 
-  transform:translateY(-3px);
+    background:#ff9333;
 
-  box-shadow:
-      0 14px 28px rgba(255,107,0,.35);
-
-}
-
-/* =====================================================
- LOGOUT ACTIVE
-===================================================== */
-
-.logout-btn:active{
-
-  transform:scale(.97);
+    transform:translateY(-2px);
 
 }
 
-/* =====================================================
-   MOBILE NAVBAR
-===================================================== */
+
+/* =========================================================
+   MOBILE TOP NAVBAR
+========================================================= */
 
 .mobile-navbar{
 
   display:none;
 
-  width:95%;
+  position:fixed;
 
-  max-width:1500px;
+  top:0;
 
-  margin:15px auto;
+  left:0;
 
-  padding:15px 18px;
+  width:100%;
 
-  background:linear-gradient(
-      90deg,
-      #0b3d3b,
-      #0f5a55,
-      #0b3d3b
-  );
+  height:70px;
 
-  border-radius:18px;
+  background:#0f5a55;
 
-  box-shadow:
-      0 10px 25px rgba(15,90,85,.18);
+  padding:0 18px;
+
+  display:flex;
 
   align-items:center;
 
   justify-content:space-between;
 
-  position:sticky;
+  box-shadow:0 5px 18px rgba(0,0,0,.12);
 
-  top:10px;
-
-  z-index:999;
+  z-index:3000;
 
 }
 
-/* =====================================================
+/* =========================================================
  MENU BUTTON
-===================================================== */
+========================================================= */
 
 .menu-btn{
 
-  width:46px;
+  width:44px;
 
-  height:46px;
+  height:44px;
 
   border:none;
 
   border-radius:12px;
 
-  background:rgba(255,255,255,.10);
+  background:rgba(255,255,255,.12);
 
   color:#ffffff;
 
@@ -555,25 +380,23 @@ body{
 
   display:flex;
 
-  justify-content:center;
-
   align-items:center;
 
-  transition:.30s;
+  justify-content:center;
+
+  transition:.3s;
 
 }
 
 .menu-btn:hover{
 
-  background:#ff7a00;
-
-  transform:rotate(90deg);
+  background:#ff7b00;
 
 }
 
-/* =====================================================
+/* =========================================================
  MOBILE BRAND
-===================================================== */
+========================================================= */
 
 .mobile-brand{
 
@@ -587,9 +410,9 @@ body{
 
 .mobile-logo{
 
-  width:48px;
+  width:42px;
 
-  height:48px;
+  height:42px;
 
   object-fit:contain;
 
@@ -607,7 +430,7 @@ body{
 
   color:#ffffff;
 
-  font-size:22px;
+  font-size:20px;
 
   font-weight:800;
 
@@ -617,23 +440,21 @@ body{
 
 .mobile-brand-text span{
 
-  color:#ff8c00;
+  color:#ff9d22;
 
   font-size:10px;
 
-  font-weight:700;
-
   letter-spacing:2px;
-
-  text-transform:uppercase;
 
   margin-top:3px;
 
+  font-weight:700;
+
 }
 
-/* =====================================================
- MOBILE USER CHIP
-===================================================== */
+/* =========================================================
+ MOBILE USER
+========================================================= */
 
 .mobile-user-chip{
 
@@ -643,67 +464,85 @@ body{
 
   border-radius:50%;
 
-  background:linear-gradient(
-      135deg,
-      #ff8c00,
-      #ff6b00
-  );
+  background:#ff7b00;
 
   color:#ffffff;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
 
   font-size:17px;
 
   font-weight:700;
 
-  display:flex;
+}
 
-  justify-content:center;
+/* =========================================================
+ MOBILE OVERLAY
+========================================================= */
 
-  align-items:center;
+.mobile-overlay{
 
-  box-shadow:
-      0 8px 18px rgba(255,107,0,.30);
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(0,0,0,.45);
+
+  backdrop-filter:blur(3px);
+
+  z-index:2998;
 
 }
 
-/* =====================================================
-   MOBILE MENU
-===================================================== */
+/* =========================================================
+   MOBILE DRAWER
+========================================================= */
 
 .mobile-menu{
 
-  width:95%;
+  position:fixed;
 
-  max-width:500px;
+  top:70px;
 
-  margin:15px auto;
+  left:-320px;
+
+  width:290px;
+
+  height:calc(100vh - 70px);
 
   background:#ffffff;
 
-  border-radius:20px;
+  box-shadow:10px 0 35px rgba(0,0,0,.15);
 
-  overflow:hidden;
+  transition:left .35s ease;
 
-  box-shadow:
-      0 15px 35px rgba(0,0,0,.12);
+  z-index:2999;
 
-  animation:slideDown .35s ease;
+  overflow-y:auto;
+
+  border-top-right-radius:18px;
+
+  border-bottom-right-radius:18px;
 
 }
 
-/* =====================================================
- MOBILE USER INFO
-===================================================== */
+/* Drawer Open */
+
+.mobile-menu.open{
+
+  left:0;
+
+}
+
+/* =========================================================
+ USER INFO
+========================================================= */
 
 .mobile-user-info{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:15px;
-
-  padding:22px;
 
   background:linear-gradient(
       135deg,
@@ -711,31 +550,35 @@ body{
       #178f83
   );
 
+  padding:25px 20px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
 }
 
 .mobile-user-avatar{
 
-  width:60px;
+  width:58px;
 
-  height:60px;
+  height:58px;
 
   border-radius:50%;
 
-  background:linear-gradient(
-      135deg,
-      #ff8c00,
-      #ff6b00
-  );
-
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
+  background:#ff7b00;
 
   color:#ffffff;
 
-  font-size:24px;
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:22px;
 
   font-weight:700;
 
@@ -755,27 +598,25 @@ body{
 
   font-size:20px;
 
-  font-weight:700;
-
   margin-bottom:4px;
 
 }
 
 .mobile-user-details p{
 
-  color:rgba(255,255,255,.85);
+  color:#dff7f4;
 
   font-size:13px;
 
-  text-transform:uppercase;
-
   letter-spacing:1px;
+
+  text-transform:uppercase;
 
 }
 
-/* =====================================================
- MOBILE LINKS
-===================================================== */
+/* =========================================================
+ MENU LINKS
+========================================================= */
 
 .mobile-menu a{
 
@@ -783,7 +624,7 @@ body{
 
   align-items:center;
 
-  gap:14px;
+  gap:15px;
 
   padding:18px 22px;
 
@@ -795,33 +636,25 @@ body{
 
   font-weight:600;
 
-  border-bottom:1px solid #edf2f1;
+  border-bottom:1px solid #eef2f4;
 
-  transition:.30s;
-
-}
-
-.mobile-menu a:last-of-type{
-
-  border-bottom:none;
+  transition:.25s;
 
 }
 
 .mobile-menu a svg{
 
+  color:#ff7b00;
+
   font-size:18px;
 
-  color:#ff7a00;
-
-  width:20px;
+  width:22px;
 
 }
 
 .mobile-menu a:hover{
 
-  background:#f8fbfa;
-
-  color:#ff7a00;
+  background:#eef9f8;
 
   padding-left:28px;
 
@@ -829,23 +662,21 @@ body{
 
 .mobile-menu .active-link{
 
-  background:#eef9f6;
+  background:#eaf8f5;
 
-  color:#0f5a55;
-
-  border-left:5px solid #ff7a00;
+  border-left:5px solid #ff7b00;
 
 }
 
-/* =====================================================
- MOBILE LOGOUT
-===================================================== */
+/* =========================================================
+ LOGOUT BUTTON
+========================================================= */
 
 .mobile-logout-btn{
 
   width:calc(100% - 30px);
 
-  margin:18px 15px;
+  margin:20px 15px;
 
   height:50px;
 
@@ -853,11 +684,7 @@ body{
 
   border-radius:14px;
 
-  background:linear-gradient(
-      135deg,
-      #ff8c00,
-      #ff6b00
-  );
+  background:#ff7b00;
 
   color:#ffffff;
 
@@ -867,30 +694,29 @@ body{
 
   cursor:pointer;
 
-  transition:.30s;
+  transition:.3s;
 
 }
 
 .mobile-logout-btn:hover{
 
-  transform:translateY(-2px);
+  background:#ff9440;
 
-  box-shadow:
-      0 12px 24px rgba(255,107,0,.30);
+  transform:translateY(-2px);
 
 }
 
-/* =====================================================
- MENU ANIMATION
-===================================================== */
+/* =========================================================
+ DRAWER ANIMATION
+========================================================= */
 
-@keyframes slideDown{
+@keyframes slideDrawer{
 
   from{
 
       opacity:0;
 
-      transform:translateY(-20px);
+      transform:translateX(-20px);
 
   }
 
@@ -898,15 +724,23 @@ body{
 
       opacity:1;
 
-      transform:translateY(0);
+      transform:translateX(0);
 
   }
 
 }
 
-/* =====================================================
-   LAPTOP
-===================================================== */
+.mobile-menu{
+
+  animation:slideDrawer .3s ease;
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+/* ---------- Laptop ---------- */
 
 @media (max-width:1200px){
 
@@ -942,11 +776,15 @@ body{
 
   }
 
+  .logout-btn{
+
+      padding:10px 18px;
+
+  }
+
 }
 
-/* =====================================================
- TABLET
-===================================================== */
+/* ---------- Tablet ---------- */
 
 @media (max-width:992px){
 
@@ -962,33 +800,39 @@ body{
 
   }
 
+  /* Important because navbar is fixed */
+
+  .page-content{
+
+      padding-top:80px;
+
+  }
+
 }
 
-/* =====================================================
- MOBILE
-===================================================== */
+/* ---------- Mobile ---------- */
 
 @media (max-width:768px){
 
   .mobile-navbar{
 
-      width:95%;
+      height:65px;
 
-      padding:14px 16px;
+      padding:0 14px;
 
   }
 
   .mobile-logo{
 
-      width:42px;
+      width:38px;
 
-      height:42px;
+      height:38px;
 
   }
 
   .mobile-brand-text h3{
 
-      font-size:20px;
+      font-size:18px;
 
   }
 
@@ -996,15 +840,13 @@ body{
 
       font-size:9px;
 
-      letter-spacing:1.5px;
-
   }
 
   .menu-btn{
 
-      width:42px;
+      width:38px;
 
-      height:42px;
+      height:38px;
 
       font-size:18px;
 
@@ -1022,41 +864,61 @@ body{
 
   .mobile-menu{
 
-      width:95%;
+      width:280px;
+
+      top:65px;
+
+      height:calc(100vh - 65px);
+
+  }
+
+  .mobile-menu a{
+
+      padding:16px 18px;
+
+      font-size:15px;
+
+  }
+
+  .mobile-user-info{
+
+      padding:20px;
+
+  }
+
+  .mobile-user-avatar{
+
+      width:52px;
+
+      height:52px;
+
+      font-size:20px;
 
   }
 
 }
 
-/* =====================================================
- SMALL MOBILE
-===================================================== */
+/* ---------- Small Mobile ---------- */
 
 @media (max-width:480px){
 
   .mobile-navbar{
 
-      padding:12px 14px;
-
-  }
-
-  .mobile-brand{
-
-      gap:8px;
+      height:60px;
 
   }
 
   .mobile-logo{
 
-      width:36px;
+      width:34px;
 
-      height:36px;
+      height:34px;
 
   }
 
   .mobile-brand-text h3{
 
-      font-size:18px;
+      font-size:16px;
 
   }
 
@@ -1068,9 +930,9 @@ body{
 
   .menu-btn{
 
-      width:38px;
+      width:36px;
 
-      height:38px;
+      height:36px;
 
       font-size:16px;
 
@@ -1086,49 +948,41 @@ body{
 
   }
 
-  .mobile-user-avatar{
+  .mobile-menu{
 
-      width:50px;
+      width:100%;
 
-      height:50px;
+      top:60px;
 
-      font-size:20px;
+      height:calc(100vh - 60px);
 
-  }
-
-  .mobile-user-details h4{
-
-      font-size:17px;
+      border-radius:0;
 
   }
 
-  .mobile-menu a{
+  .mobile-user-info{
 
-      padding:16px 18px;
-
-      font-size:15px;
+      border-radius:0;
 
   }
 
   .mobile-logout-btn{
 
-      height:46px;
-
-      font-size:15px;
+      margin:15px;
 
   }
 
 }
 
-/* =====================================================
- LARGE DESKTOP
-===================================================== */
+/* ---------- Desktop Only ---------- */
 
-@media (min-width:1600px){
+@media (min-width:993px){
 
-  .navbar{
+  .mobile-navbar,
+  .mobile-menu,
+  .mobile-overlay{
 
-      max-width:1650px;
+      display:none;
 
   }
 

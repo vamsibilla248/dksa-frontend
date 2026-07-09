@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
 
-import Navbar from "../components/Navbar";
 import TurfCard from "../components/TurfCard";
-import Footer from "../components/Footer";
-
 import { getActiveTurfs } from "../services/turfService";
 
 import "../styles/Dashboard.css";
@@ -13,69 +11,90 @@ function Dashboard() {
   const navigate = useNavigate();
 
   const [turfs, setTurfs] = useState([]);
-
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchTurfs = async () => {
-      try {
-        const response = await getActiveTurfs();
-
-        setTurfs(response.data);
-      } catch (error) {
-        console.error("Error loading turfs:", error);
-      }
-    };
-
-    fetchTurfs();
+    loadTurfs();
   }, []);
 
-  const handleSelectTurf = (turfId) => {
-    navigate(`/booking/${turfId}`);
+  const loadTurfs = async () => {
+    try {
+      const response = await getActiveTurfs();
+      setTurfs(response.data || []);
+    } catch (error) {
+      console.error("Error loading turfs:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const filteredTurfs = turfs.filter((turf) =>
-    turf.turfName.toLowerCase().includes(search.toLowerCase())
-  );
+  const handleSelectTurf = (id) => {
+    navigate(`/booking/${id}`);
+  };
+
+  const filteredTurfs = useMemo(() => {
+    return turfs.filter((turf) =>
+      turf.turfName.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [turfs, search]);
 
   return (
-    <>
-      
+    <div className="dashboard-page">
+      {/* ================= HEADER ================= */}
 
-      <div className="dashboard-page">
-        <div className="dashboard-header">
-          <h1 className="dashboard-title">Book Your Turf</h1>
+      <div className="dashboard-header">
+        <h1 className="dashboard-title">Book Your Turf</h1>
 
-          <p className="dashboard-subtitle">
-            Select a turf and reserve your slot.
-          </p>
+        <p className="dashboard-subtitle">
+          Choose your favourite turf and reserve your slot instantly.
+        </p>
 
-          <input
-            className="search-box"
-            type="text"
-            placeholder="🔍 Search Turf..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
+        <div className="search-wrapper">
+          <div className="search-input">
+            <FaSearch />
 
-        <div className="turf-grid">
-          {filteredTurfs.length > 0 ? (
-            filteredTurfs.map((turf) => (
-              <TurfCard key={turf.id} turf={turf} onSelect={handleSelectTurf} />
-            ))
-          ) : (
-            <div className="no-turf-found">
-              <div className="no-turf-icon">🏏</div>
-
-              <h2>No Turf Found</h2>
-
-              <p>We couldn't find any turf matching your search.</p>
-            </div>
-          )}
+            <input
+              type="text"
+              placeholder="Search Turf..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
         </div>
       </div>
-    </>
+
+      {/* ================= AVAILABLE HEADER ================= */}
+
+      {/*<div className="available-header">
+        <h2>
+          Available Turfs
+          <span className="count-badge">{filteredTurfs.length}</span>
+        </h2>
+      </div>*/}
+
+      {/* ================= TURF GRID ================= */}
+
+      {loading ? (
+        <div className="no-turf">
+          <h2>Loading...</h2>
+        </div>
+      ) : filteredTurfs.length === 0 ? (
+        <div className="no-turf">
+          <div className="no-turf-icon">🏏</div>
+
+          <h2>No Turf Found</h2>
+
+          <p>No turf matches your search.</p>
+        </div>
+      ) : (
+        <div className="turf-grid">
+          {filteredTurfs.map((turf) => (
+            <TurfCard key={turf.id} turf={turf} onSelect={handleSelectTurf} />
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
 

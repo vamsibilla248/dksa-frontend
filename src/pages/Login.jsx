@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { login } from "../services/authService";
 import { useAuth } from "../context/AuthContext";
 import "../styles/Login.css";
+import logo from "../logo/dksa.png";
 
 function Login() {
   const navigate = useNavigate();
@@ -67,7 +68,7 @@ function Login() {
             <span></span>
           </div>
 
-          <img src="/src/logo/dksa.png" alt="DKSA" className="left-logo" />
+          <img src={logo} alt="DKSA" className="left-logo" />
 
           <h1>DKSA</h1>
 

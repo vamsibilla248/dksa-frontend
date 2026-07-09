@@ -67,7 +67,7 @@ function Login() {
             <span></span>
           </div>
 
-          <img src="/src/logo/dksa-logo.png" alt="DKSA" className="left-logo" />
+          <img src="/src/logo/dksa.png" alt="DKSA" className="left-logo" />
 
           <h1>DKSA</h1>
 

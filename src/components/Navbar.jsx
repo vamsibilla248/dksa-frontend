@@ -145,7 +145,7 @@ function Navbar() {
   MOBILE MENU
 ========================== */}
       {menuOpen && (
-        <div className="mobile-menu">
+        <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
           <div className="mobile-user-info">
             <div className="mobile-user-avatar">
               {username?.charAt(0)?.toUpperCase()}

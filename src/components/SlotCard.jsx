@@ -37,11 +37,10 @@ function SlotCard({ slot, selected, onSelect }) {
     >
       <div className="slot-card-time">
         <FaRegClock />
-
-        <span>{slotTime}</span>
+        <span>
+          {slotTime} - ₹{slot.price}
+        </span>
       </div>
-
-      <div className="slot-card-price">₹{slot.price}</div>
     </button>
   );
 }

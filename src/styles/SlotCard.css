@@ -3,165 +3,113 @@
 ========================================== */
 
 .slot-card{
-
-    width:125px;
-
-    height:72px;
+    width:145px;
+    height:56px;
 
     background:#ffffff;
-
     border:1px solid #dfe8e5;
-
-    border-radius:10px;
+    border-radius:12px;
 
     display:flex;
-
-    flex-direction:column;
-
     justify-content:center;
-
     align-items:center;
 
-    gap:8px;
-
     cursor:pointer;
+    transition:all .25s ease;
 
-    transition:.25s;
-
-    box-shadow:0 3px 10px rgba(0,0,0,.05);
-
+    box-shadow:0 3px 8px rgba(0,0,0,.05);
 }
 
 .slot-card:hover:not(:disabled){
-
-    transform:translateY(-3px);
-
-    box-shadow:0 10px 18px rgba(0,0,0,.10);
-
+    transform:translateY(-2px);
     border-color:#0f5a55;
-
+    box-shadow:0 8px 16px rgba(0,0,0,.10);
 }
 
 /* ==========================================
-   TIME
+   TIME + PRICE
 ========================================== */
 
 .slot-card-time{
-
     display:flex;
-
     align-items:center;
+    justify-content:center;
 
-    gap:6px;
+    gap:2px;
 
-    font-size:16px;
+    width:100%;
 
+    font-size:14px;
     font-weight:700;
+    color:#0f5a55;
 
-    color:#103f43;
-
+    white-space:nowrap;
 }
 
 .slot-card-time svg{
-
-    font-size:15px;
-
-    color:#0f5a55;
-
+    color:#ff6b1a;
+    font-size:14px;
+    margin-right:2px;
+    flex-shrink:0;
 }
 
-/* ==========================================
-   PRICE
-========================================== */
-
-.slot-card-price{
-
-    font-size:14px;
-
-    font-weight:700;
-
-    color:#ff6b1a;
-
+.slot-card-time span{
+    margin:0;
+    padding:0;
+    line-height:1;
 }
 
 /* ==========================================
    AVAILABLE
 ========================================== */
 
-.available{
-
+.slot-card.available{
     background:#ffffff;
-
+    border-color:#dfe8e5;
 }
 
 /* ==========================================
    SELECTED
 ========================================== */
 
-.selected{
-
+.slot-card.selected{
     background:#19b46b;
-
     border-color:#19b46b;
-
 }
 
-.selected .slot-card-time,
-
-.selected .slot-card-time svg,
-
-.selected .slot-card-price{
-
-    color:white;
-
+.slot-card.selected .slot-card-time,
+.slot-card.selected .slot-card-time svg{
+    color:#ffffff;
 }
 
 /* ==========================================
    BOOKED
 ========================================== */
 
-.booked{
-
+.slot-card.booked{
     background:#ef4444;
-
     border-color:#ef4444;
-
     cursor:not-allowed;
-
 }
 
-.booked .slot-card-time,
-
-.booked .slot-card-time svg,
-
-.booked .slot-card-price{
-
-    color:white;
-
+.slot-card.booked .slot-card-time,
+.slot-card.booked .slot-card-time svg{
+    color:#ffffff;
 }
 
 /* ==========================================
    EXPIRED
 ========================================== */
 
-.expired{
-
+.slot-card.expired{
     background:#9ca3af;
-
     border-color:#9ca3af;
-
     cursor:not-allowed;
-
 }
 
-.expired .slot-card-time,
-
-.expired .slot-card-time svg,
-
-.expired .slot-card-price{
-
-    color:white;
-
+.slot-card.expired .slot-card-time,
+.slot-card.expired .slot-card-time svg{
+    color:#ffffff;
 }
 
 /* ==========================================
@@ -169,43 +117,27 @@
 ========================================== */
 
 .slot-card:disabled{
-
-    opacity:.95;
-
+    opacity:.9;
 }
 
 /* ==========================================
    MOBILE
 ========================================== */
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-.slot-card{
+    .slot-card{
+        width:118px;
+        height:50px;
+    }
 
-    width:95px;
+    .slot-card-time{
+        font-size:12px;
+        gap:1px;
+    }
 
-    height:62px;
-
-    gap:5px;
-
-}
-
-.slot-card-time{
-
-    font-size:13px;
-
-}
-
-.slot-card-time svg{
-
-    font-size:12px;
-
-}
-
-.slot-card-price{
-
-    font-size:12px;
-
-}
-
+    .slot-card-time svg{
+        font-size:12px;
+        margin-right:2px;
+    }
 }

@@ -6,6 +6,7 @@ import {
   FaTimes,
   FaHome,
   FaCalendarAlt,
+  FaCalendarPlus,
   FaUser,
   FaLock,
   FaUsers,
@@ -26,7 +27,6 @@ function Navbar() {
 
   const handleLogout = () => {
     logout();
-
     navigate("/");
   };
 
@@ -40,9 +40,11 @@ function Navbar() {
     <>
       {/* Overlay */}
       {menuOpen && <div className="mobile-overlay" onClick={closeMenu} />}
+
       {/* ==========================
           DESKTOP NAVBAR
       ========================== */}
+
       <nav className="navbar">
         <div className="navbar-left">
           <div className="navbar-brand-section">
@@ -50,12 +52,13 @@ function Navbar() {
 
             <div className="brand-text">
               <h2>DKSA</h2>
-
-              <span>SPORTS ACADAMY</span>
+              <span>SPORTS ACADEMY</span>
             </div>
           </div>
 
           <div className="navbar-links">
+            {/* CUSTOMER MENU */}
+
             {role === "CUSTOMER" && (
               <>
                 <NavLink to="/dashboard" className={activeClass}>
@@ -80,6 +83,8 @@ function Navbar() {
               </>
             )}
 
+            {/* ADMIN MENU */}
+
             {role === "ADMIN" && (
               <>
                 <NavLink to="/admin/dashboard" className={activeClass}>
@@ -87,14 +92,19 @@ function Navbar() {
                   Dashboard
                 </NavLink>
 
-                <NavLink to="/admin/users" className={activeClass}>
-                  <FaUsers />
-                  Users
+                <NavLink to="/admin/create-booking" className={activeClass}>
+                  <FaCalendarPlus />
+                  Create Booking
                 </NavLink>
 
                 <NavLink to="/admin/bookings" className={activeClass}>
                   <FaCalendarAlt />
                   Bookings
+                </NavLink>
+
+                <NavLink to="/admin/users" className={activeClass}>
+                  <FaUsers />
+                  Users
                 </NavLink>
               </>
             )}
@@ -109,7 +119,6 @@ function Navbar() {
 
             <div className="user-info">
               <small>Welcome</small>
-
               <span>{username}</span>
             </div>
           </div>
@@ -119,9 +128,11 @@ function Navbar() {
           </button>
         </div>
       </nav>
+
       {/* ==========================
           MOBILE NAVBAR
       ========================== */}
+
       <div className="mobile-navbar">
         <button className="menu-btn" onClick={() => setMenuOpen(true)}>
           <FaBars />
@@ -132,8 +143,7 @@ function Navbar() {
 
           <div className="mobile-brand-text">
             <h3>DKSA</h3>
-
-            <span>SPORTS ACADAMY</span>
+            <span>SPORTS ACADEMY</span>
           </div>
         </div>
 
@@ -141,9 +151,11 @@ function Navbar() {
           {username?.charAt(0)?.toUpperCase()}
         </div>
       </div>
+
       {/* ==========================
   MOBILE MENU
 ========================== */}
+
       {menuOpen && (
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
           <div className="mobile-user-info">
@@ -153,7 +165,6 @@ function Navbar() {
 
             <div className="mobile-user-details">
               <h4>{username}</h4>
-
               <p>{role}</p>
             </div>
 
@@ -169,6 +180,8 @@ function Navbar() {
               <FaTimes />
             </button>
           </div>
+
+          {/* CUSTOMER MENU */}
 
           {role === "CUSTOMER" && (
             <>
@@ -210,6 +223,8 @@ function Navbar() {
             </>
           )}
 
+          {/* ADMIN MENU */}
+
           {role === "ADMIN" && (
             <>
               <NavLink
@@ -222,12 +237,12 @@ function Navbar() {
               </NavLink>
 
               <NavLink
-                to="/admin/users"
+                to="/admin/create-booking"
                 className={activeClass}
                 onClick={closeMenu}
               >
-                <FaUsers />
-                <span>Users</span>
+                <FaCalendarPlus />
+                <span>Create Booking</span>
               </NavLink>
 
               <NavLink
@@ -238,6 +253,15 @@ function Navbar() {
                 <FaCalendarAlt />
                 <span>Bookings</span>
               </NavLink>
+
+              <NavLink
+                to="/admin/users"
+                className={activeClass}
+                onClick={closeMenu}
+              >
+                <FaUsers />
+                <span>Users</span>
+              </NavLink>
             </>
           )}
 
@@ -245,7 +269,7 @@ function Navbar() {
             Logout
           </button>
         </div>
-      )}{" "}
+      )}
     </>
   );
 }

@@ -1,218 +1,1504 @@
+/* =====================================================
+   GOOGLE FONT
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.booking-card{
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#f5f9f8;
+
+    color:#143c43;
+
+}
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.booking-page{
+
+    min-height:100vh;
+
+    padding:45px 7%;
+
+    background:
+
+    radial-gradient(circle at top left,
+    rgba(34,197,94,.08),
+    transparent 35%),
+
+    radial-gradient(circle at top right,
+    rgba(59,130,246,.08),
+    transparent 40%),
+
+    linear-gradient(
+        180deg,
+        #f8fbfa,
+        #f3f7f6
+    );
+
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.booking-hero{
+
+    display:grid;
+
+    grid-template-columns:1.3fr .7fr;
+
+    gap:70px;
+
+    align-items:center;
+
+    margin-bottom:60px;
+
+}
+
+/* =====================================================
+   LEFT HERO
+===================================================== */
+
+.hero-left{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.booking-tag{
+
+    width:max-content;
+
+    background:#eaf8f3;
+
+    color:#0f5a55;
+
+    padding:10px 18px;
+
+    border-radius:40px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+.hero-left h1{
+
+    font-size:64px;
+
+    font-weight:800;
+
+    line-height:1.05;
+
+    color:#143c43;
+
+}
+
+.hero-left p{
+
+    max-width:650px;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+/* =====================================================
+   HERO FEATURES
+===================================================== */
+
+.hero-features{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.feature{
+
+    padding:12px 18px;
+
+    background:white;
+
+    border-radius:12px;
+
+    border:1px solid #e4ece9;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#0f5a55;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+
+}
+
+/* =====================================================
+   RIGHT HERO
+===================================================== */
+
+.hero-right{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+}/* =====================================================
+   DATE CARD
+===================================================== */
+
+.date-card{
+
+  width:380px;
+
   background:#ffffff;
-  border-radius:20px;
-  padding:20px;
-  box-shadow:0 8px 25px rgba(15,90,85,.08);
-  transition:.3s;
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  overflow:hidden;
-  position:relative;
+
+  border-radius:22px;
+
+  padding:28px;
+
+  border:1px solid #e4ece9;
+
+  box-shadow:
+  0 18px 45px rgba(15,90,85,.08);
+
 }
 
-.booking-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 20px 40px rgba(15,90,85,.15);
-}
+.date-card h3{
 
-/* STATUS BORDER */
+  font-size:24px;
 
-.booking-card:has(.status-paid){
-  border-top:4px solid #22c55e;
-}
-
-.booking-card:has(.status-pending){
-  border-top:4px solid #ff6b1a;
-}
-
-/* HEADER */
-
-.booking-header{
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-}
-
-.booking-turf-name{
-  color:#0f5a55;
-  font-size:22px;
-  font-weight:800;
-  margin-bottom:4px;
-}
-
-.booking-id{
-  color:#94a3b8;
-  font-size:12px;
-  font-weight:600;
-}
-
-/* STATUS */
-
-.status-paid{
-  background:#dcfce7;
-  color:#15803d;
-  padding:6px 12px;
-  border-radius:20px;
-  font-size:11px;
   font-weight:700;
+
+  color:#143c43;
+
+  margin-bottom:10px;
+
 }
 
-.status-pending{
-  background:#ffedd5;
-  color:#ea580c;
-  padding:6px 12px;
-  border-radius:20px;
-  font-size:11px;
-  font-weight:700;
-}
-
-/* DATE */
-
-.booking-date-card{
-  display:flex;
-  align-items:center;
-  gap:8px;
-
-  background:#f8fafc;
-  border:1px solid #e2e8f0;
-
-  border-radius:12px;
-  padding:12px;
+.date-card p{
 
   color:#64748b;
-  font-size:13px;
-  font-weight:600;
+
+  font-size:15px;
+
+  line-height:1.6;
+
+  margin-bottom:22px;
+
 }
 
-/* SLOT COUNT */
+/* =====================================================
+ DATE PICKER
+===================================================== */
 
-.slot-count-card{
-  display:flex;
-  align-items:center;
-  gap:8px;
+.date-picker{
 
-  background:#fff8f3;
-  border:1px solid #ffd8bf;
+  width:100%;
 
-  border-radius:12px;
-  padding:12px;
+  height:58px;
 
-  color:#ff6b1a;
-  font-size:13px;
-  font-weight:700;
-}
-
-/* SLOT TIMES */
-
-.slot-times-container{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-}
-
-.slot-chip{
-  background:#e8f5f2;
-  color:#0f5a55;
-
-  border:1px solid #c7e6df;
-
-  padding:7px 12px;
-
-  border-radius:20px;
-
-  font-size:12px;
-  font-weight:700;
-}
-
-/* AMOUNT */
-
-.booking-amount-card{
-  background:linear-gradient(
-    135deg,
-    #f8fafc,
-    #eef7f5
-  );
+  padding:0 18px;
 
   border-radius:14px;
-  padding:15px;
 
-  border:1px solid #d6ebe7;
-}
+  border:2px solid #dce8e5;
 
-.amount-label{
-  color:#64748b;
-  font-size:12px;
+  outline:none;
+
+  font-size:16px;
+
   font-weight:600;
-  margin-bottom:5px;
+
+  color:#143c43;
+
+  transition:.3s;
+
+  background:#ffffff;
+
 }
 
-.amount-value{
+.date-picker:hover{
+
+  border-color:#84d4bf;
+
+}
+
+.date-picker:focus{
+
+  border-color:#22a06b;
+
+  box-shadow:
+  0 0 0 5px rgba(34,160,107,.12);
+
+}
+
+/* =====================================================
+ SELECTED DATE
+===================================================== */
+
+.selected-date{
+
+  margin-top:20px;
+
+  padding:14px 16px;
+
+  border-radius:14px;
+
+  background:#f2fbf8;
+
   color:#0f5a55;
-  font-size:34px;
+
+  font-size:15px;
+
+  font-weight:600;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  border:1px solid #d6f1e7;
+
+}
+.section-title{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:25px;
+
+  margin:50px 0 35px;
+
+}
+
+.section-title span{
+
+  width:100px;
+
+  height:2px;
+
+  background:#ff6b00;
+
+  opacity:.8;
+
+}
+
+.section-title h2{
+
+  color:#0F5A55;
+
+  font-size:40px;
+
   font-weight:800;
+
+  letter-spacing:1.5px;
+
+  text-transform:uppercase;
+
 }
 
-/* BUTTON */
+/* =====================================================
+ CONTENT LAYOUT
+===================================================== */
 
-.booking-actions{
-  margin-top:auto;
+.booking-layout{
+
+  display:grid;
+
+  grid-template-columns:2fr 400px;
+
+  gap:35px;
+
+  align-items:start;
+
 }
 
-.receipt-btn{
-  width:100%;
+.booking-left{
 
-  border:none;
+  display:flex;
 
-  padding:13px;
+  flex-direction:column;
 
-  border-radius:12px;
+  gap:30px;
 
-  background:linear-gradient(
-    135deg,
-    #0f5a55,
-    #146b64
-  );
+}
 
-  color:white;
+.booking-right{
 
-  font-size:14px;
+  position:sticky;
+
+  top:30px;
+
+}/* =====================================================
+   SESSION CARD
+===================================================== */
+
+.session-card{
+
+    background:#ffffff;
+
+    border-radius:22px;
+
+    padding:24px;
+
+    border:1px solid #e6efec;
+
+    box-shadow:0 12px 30px rgba(15,90,85,.08);
+
+    transition:.30s ease;
+
+}
+
+.session-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 40px rgba(15,90,85,.12);
+
+}
+
+/* =====================================================
+   SESSION HEADER
+===================================================== */
+
+.session-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:22px;
+
+    padding-bottom:18px;
+
+    border-bottom:1px solid #edf2f1;
+
+}
+
+/* =====================================================
+   SESSION LEFT
+===================================================== */
+
+.session-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.session-left h2{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#143c43;
+
+    margin-bottom:5px;
+
+}
+
+.session-left p{
+
+    font-size:15px;
+
+    color:#64748b;
+
+}
+
+/* =====================================================
+   SESSION ICON
+===================================================== */
+
+.session-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#ffffff;
+
+    font-size:28px;
+
+    flex-shrink:0;
+
+}
+
+/* ==========================================
+   MORNING
+========================================== */
+
+.session-icon.morning{
+
+    background:linear-gradient(
+        135deg,
+        #FDB813,
+        #F57C00
+    );
+
+}
+
+/* ==========================================
+   AFTERNOON
+========================================== */
+
+.session-icon.afternoon{
+
+    background:linear-gradient(
+        135deg,
+        #42A5F5,
+        #1565C0
+    );
+
+}
+
+/* ==========================================
+   EVENING
+========================================== */
+
+.session-icon.evening{
+
+    background:linear-gradient(
+        135deg,
+        #5E35B1,
+        #283593
+    );
+
+}
+
+/* =====================================================
+   SLOT COUNT
+===================================================== */
+
+.slot-count{
+
+    background:#ecfdf5;
+
+    color:#0f5a55;
+
+    border:1px solid #d6f3e5;
+
+    padding:10px 18px;
+
+    border-radius:40px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    min-width:95px;
+
+    text-align:center;
+
+}
+
+/* =====================================================
+   SLOT SECTION SPACING
+===================================================== */
+
+.session-card + .session-card{
+
+    margin-top:30px;
+
+}
+
+/* =====================================================
+   SESSION CARD
+===================================================== */
+
+.session-card{
+
+  background:#ffffff;
+
+  border-radius:22px;
+
+  padding:24px;
+
+  border:1px solid #e6efec;
+
+  box-shadow:0 12px 30px rgba(15,90,85,.08);
+
+  transition:.30s ease;
+
+}
+
+.session-card:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:0 18px 40px rgba(15,90,85,.12);
+
+}
+
+/* =====================================================
+ SESSION HEADER
+===================================================== */
+
+.session-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:22px;
+
+  padding-bottom:18px;
+
+  border-bottom:1px solid #edf2f1;
+
+}
+
+/* =====================================================
+ SESSION LEFT
+===================================================== */
+
+.session-left{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+}
+
+.session-left h2{
+
+  font-size:24px;
+
   font-weight:700;
 
-  cursor:pointer;
-  transition:.3s;
+  color:#143c43;
+
+  margin-bottom:5px;
+
 }
 
-.receipt-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 20px rgba(15,90,85,.25);
+.session-left p{
+
+  font-size:15px;
+
+  color:#64748b;
+
 }
 
-/* MOBILE */
+/* =====================================================
+ SESSION ICON
+===================================================== */
+
+.session-icon{
+
+  width:65px;
+
+  height:65px;
+
+  border-radius:18px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:#ffffff;
+
+  font-size:28px;
+
+  flex-shrink:0;
+
+}
+
+/* ==========================================
+ MORNING
+========================================== */
+
+.session-icon.morning{
+
+  background:linear-gradient(
+      135deg,
+      #FDB813,
+      #F57C00
+  );
+
+}
+
+/* ==========================================
+ AFTERNOON
+========================================== */
+
+.session-icon.afternoon{
+
+  background:linear-gradient(
+      135deg,
+      #42A5F5,
+      #1565C0
+  );
+
+}
+
+/* ==========================================
+ EVENING
+========================================== */
+
+.session-icon.evening{
+
+  background:linear-gradient(
+      135deg,
+      #5E35B1,
+      #283593
+  );
+
+}
+
+/* =====================================================
+ SLOT COUNT
+===================================================== */
+
+.slot-count{
+
+  background:#ecfdf5;
+
+  color:#0f5a55;
+
+  border:1px solid #d6f3e5;
+
+  padding:10px 18px;
+
+  border-radius:40px;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  min-width:95px;
+
+  text-align:center;
+
+}
+
+/* =====================================================
+ SLOT SECTION SPACING
+===================================================== */
+
+.session-card + .session-card{
+
+  margin-top:30px;
+
+}
+
+/* =====================================================
+   SLOT GRID
+===================================================== */
+
+.slot-grid{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:14px;
+
+  align-items:flex-start;
+
+}
+
+/* =====================================================
+ SLOT CONTAINER
+===================================================== */
+
+.slot-grid .slot-card{
+
+  transition:.25s;
+
+}
+
+.slot-grid .slot-card:hover{
+
+  transform:translateY(-3px);
+
+}
+
+/* =====================================================
+ LOADING
+===================================================== */
+
+.loading-slots{
+
+  width:100%;
+
+  height:130px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  border-radius:16px;
+
+  background:#f8fbfa;
+
+  border:2px dashed #d7e7e2;
+
+  color:#0f5a55;
+
+  font-size:18px;
+
+  font-weight:700;
+
+}
+
+/* =====================================================
+ NO SLOTS
+===================================================== */
+
+.no-slots{
+
+  width:100%;
+
+  padding:45px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  border-radius:18px;
+
+  border:2px dashed #d9e7e3;
+
+  background:#fafdfc;
+
+  color:#94a3b8;
+
+  font-size:18px;
+
+  font-weight:600;
+
+}
+
+/* =====================================================
+ SESSION BODY
+===================================================== */
+
+.session-card .slot-grid{
+
+  margin-top:8px;
+
+}
+
+/* =====================================================
+ SLOT GRID SCROLL
+===================================================== */
+
+.session-card{
+
+  overflow:hidden;
+
+}
+
+/* =====================================================
+ SLOT ROW GAP
+===================================================== */
+
+.slot-grid>*{
+
+  margin:0;
+
+}
+
+/* =====================================================
+ SLOT ANIMATION
+===================================================== */
+
+.slot-grid>*{
+
+  animation:fadeUp .35s ease;
+
+}
+
+@keyframes fadeUp{
+
+  from{
+
+      opacity:0;
+
+      transform:translateY(12px);
+
+  }
+
+  to{
+
+      opacity:1;
+
+      transform:translateY(0);
+
+  }
+
+}
+
+/* =====================================================
+ SLOT GRID LARGE SCREEN
+===================================================== */
+
+@media(min-width:1400px){
+
+  .slot-grid{
+
+      gap:18px;
+
+  }
+
+}
+
+/* =====================================================
+ SLOT GRID TABLET
+===================================================== */
+
+@media(max-width:992px){
+
+  .slot-grid{
+
+      gap:12px;
+
+  }
+
+}
+
+/* =====================================================
+ SLOT GRID MOBILE
+===================================================== */
 
 @media(max-width:768px){
 
-  .booking-card{
-    padding:16px;
+  .slot-grid{
+
+      justify-content:center;
+
+      gap:10px;
+
   }
 
-  .booking-turf-name{
-    font-size:18px;
+}
+
+
+/* =====================================================
+   BOOKING SUMMARY WRAPPER
+===================================================== */
+
+.booking-summary-wrapper{
+
+  position:sticky;
+
+  top:30px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+
+}
+
+/* =====================================================
+ BOOKING SUMMARY CARD
+===================================================== */
+
+.booking-summary{
+
+  width:100%;
+
+  background:#ffffff;
+
+  border-radius:22px;
+
+  border:1px solid #e5ece9;
+
+  box-shadow:0 15px 40px rgba(15,90,85,.08);
+
+  overflow:hidden;
+
+}
+
+/* =====================================================
+ PAYMENT BUTTON
+===================================================== */
+
+.confirm-booking-btn{
+
+  width:100%;
+
+  height:58px;
+
+  border:none;
+
+  border-radius:16px;
+
+  background:linear-gradient(
+      135deg,
+      #0f5a55,
+      #178f83
+  );
+
+  color:#ffffff;
+
+  font-size:17px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.30s;
+
+  box-shadow:
+  0 10px 28px rgba(15,90,85,.25);
+
+}
+
+/* ==========================================
+ BUTTON HOVER
+========================================== */
+
+.confirm-booking-btn:hover:not(:disabled){
+
+  transform:translateY(-3px);
+
+  box-shadow:
+  0 16px 34px rgba(15,90,85,.30);
+
+}
+
+/* ==========================================
+ BUTTON ACTIVE
+========================================== */
+
+.confirm-booking-btn:active{
+
+  transform:scale(.98);
+
+}
+
+/* ==========================================
+ DISABLED
+========================================== */
+
+.confirm-booking-btn:disabled,
+
+.confirm-booking-btn.disabled{
+
+  background:#cbd5e1;
+
+  color:#64748b;
+
+  cursor:not-allowed;
+
+  box-shadow:none;
+
+  transform:none;
+
+}
+
+/* =====================================================
+ SECURE PAYMENT
+===================================================== */
+
+.secure-payment{
+
+  background:#ffffff;
+
+  border:1px solid #e5ece9;
+
+  border-radius:16px;
+
+  padding:18px;
+
+  text-align:center;
+
+  color:#0f5a55;
+
+  font-size:14px;
+
+  font-weight:600;
+
+  box-shadow:
+  0 8px 22px rgba(15,90,85,.06);
+
+}
+
+/* =====================================================
+ PAYMENT INFO
+===================================================== */
+
+.secure-payment::before{
+
+  content:"";
+
+  display:block;
+
+  width:55px;
+
+  height:4px;
+
+  background:#22c55e;
+
+  border-radius:20px;
+
+  margin:0 auto 12px;
+
+}
+
+/* =====================================================
+ RIGHT PANEL SPACING
+===================================================== */
+
+.booking-right{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+
+}
+
+/* =====================================================
+ RIGHT PANEL ANIMATION
+===================================================== */
+
+.booking-summary-wrapper{
+
+  animation:slideRight .45s ease;
+
+}
+
+@keyframes slideRight{
+
+  from{
+
+      opacity:0;
+
+      transform:translateX(25px);
+
   }
 
-  .amount-value{
-    font-size:28px;
+  to{
+
+      opacity:1;
+
+      transform:translateX(0);
+
   }
 
-  .slot-chip{
-    width:100%;
-    text-align:center;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width:1200px){
+
+  .booking-page{
+
+      padding:35px;
+
   }
+
+  .booking-hero{
+
+      grid-template-columns:1fr;
+
+      gap:40px;
+
+  }
+
+  .hero-right{
+
+      justify-content:flex-start;
+
+  }
+
+  .date-card{
+
+      width:100%;
+
+      max-width:500px;
+
+  }
+
+  .booking-layout{
+
+      grid-template-columns:1fr;
+
+      gap:35px;
+
+  }
+
+  .booking-right{
+
+      position:static;
+
+      width:100%;
+
+  }
+
+  .booking-summary-wrapper{
+
+      position:static;
+
+  }
+
+}
+
+/* =====================================================
+ TABLET
+===================================================== */
+
+@media (max-width:992px){
+
+  .booking-page{
+
+      padding:25px;
+
+  }
+
+  .hero-left h1{
+
+      font-size:46px;
+
+  }
+
+  .hero-left p{
+
+      font-size:17px;
+
+  }
+
+  .hero-features{
+
+      gap:12px;
+
+  }
+
+  .feature{
+
+      font-size:13px;
+
+  }
+
+  .session-card{
+
+      padding:20px;
+
+  }
+
+  .session-header{
+
+      flex-direction:column;
+
+      align-items:flex-start;
+
+      gap:18px;
+
+  }
+
+  .slot-count{
+
+      align-self:flex-start;
+
+  }
+
+}
+
+/* =====================================================
+ MOBILE
+===================================================== */
+
+@media (max-width:768px){
+
+  .booking-page{
+
+      padding:18px;
+
+  }
+
+  .booking-hero{
+
+      gap:25px;
+
+      margin-bottom:35px;
+
+  }
+
+  .booking-tag{
+
+      font-size:12px;
+
+      padding:8px 14px;
+
+  }
+
+  .hero-left h1{
+
+      font-size:34px;
+
+      line-height:1.2;
+
+  }
+
+  .hero-left p{
+
+      font-size:15px;
+
+      line-height:1.7;
+
+  }
+
+  .hero-features{
+
+      flex-direction:column;
+
+      gap:10px;
+
+  }
+
+  .feature{
+
+      width:100%;
+
+      justify-content:center;
+
+      text-align:center;
+
+  }
+
+  .date-card{
+
+      width:100%;
+
+      padding:20px;
+
+  }
+
+  .date-card h3{
+
+      font-size:20px;
+
+  }
+
+  .date-picker{
+
+      height:50px;
+
+  }
+
+  .selected-date{
+
+      font-size:13px;
+
+  }
+
+  .section-title{
+
+      margin:30px 0;
+
+  }
+
+  .section-title span{
+
+      width:40px;
+
+  }
+
+  .section-title h2{
+
+      font-size:24px;
+
+  }
+
+  .session-card{
+
+      padding:18px;
+
+      border-radius:18px;
+
+  }
+
+  .session-left{
+
+      gap:12px;
+
+  }
+
+  .session-left h2{
+
+      font-size:20px;
+
+  }
+
+  .session-left p{
+
+      font-size:13px;
+
+  }
+
+  .session-icon{
+
+      width:52px;
+
+      height:52px;
+
+      font-size:20px;
+
+      border-radius:14px;
+
+  }
+
+  .slot-count{
+
+      font-size:12px;
+
+      padding:7px 12px;
+
+  }
+
+  .booking-summary{
+
+      border-radius:18px;
+
+  }
+
+  .confirm-booking-btn{
+
+      height:52px;
+
+      font-size:15px;
+
+  }
+
+  .secure-payment{
+
+      font-size:13px;
+
+      padding:15px;
+
+  }
+
+}
+
+/* =====================================================
+ SMALL MOBILE
+===================================================== */
+
+@media (max-width:480px){
+
+  .booking-page{
+
+      padding:14px;
+
+  }
+
+  .hero-left h1{
+
+      font-size:28px;
+
+  }
+
+  .hero-left p{
+
+      font-size:14px;
+
+  }
+
+  .date-card{
+
+      padding:18px;
+
+  }
+
+  .section-title h2{
+
+      font-size:21px;
+
+  }
+
+  .session-card{
+
+      padding:15px;
+
+  }
+
+  .slot-grid{
+
+      justify-content:center;
+
+      gap:8px;
+
+  }
+
+}
+
+/* =====================================================
+ LARGE DESKTOP
+===================================================== */
+
+@media (min-width:1600px){
+
+  .booking-page{
+
+      max-width:1650px;
+
+      margin:auto;
+
+  }
+
 }

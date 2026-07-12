@@ -11,3 +11,10 @@ export const getSlotsByDate = (
     `/api/customer/slots?turfId=${turfId}&date=${date}`
   );
 };
+
+export const getAdminSlotsByDate = (turfId, date) => {
+  return axiosInstance.get(
+    `/api/admin/slots?turfId=${turfId}&date=${date}`
+  );
+};
+

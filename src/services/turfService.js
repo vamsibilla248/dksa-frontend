@@ -9,6 +9,14 @@ export const getActiveTurfs =
         );
     };
 
+export const getAdminActiveTurfs =
+    () => {
+
+        return axiosInstance.get(
+            "/api/admin/turfs"
+        );
+    };
+
 export const createTurf = (data) => {
 
     return axiosInstance.post(

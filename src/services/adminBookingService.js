@@ -20,3 +20,10 @@ export const cancelBooking =
             `/api/admin/bookings/${bookingId}`
         );
     };
+
+export const createOfflineBooking = (bookingData) => {
+    return axiosInstance.post(
+        "/api/admin/bookings/offline",
+        bookingData
+    );
+};

@@ -17,6 +17,7 @@ import AdminTurfs from "../pages/AdminTurfs";
 import AdminUsers from "../pages/AdminUsers";
 import AdminCalendar from "../pages/AdminCalendar";
 import AdminSlots from "../pages/AdminSlots";
+import AdminCreateBooking from "../pages/AdminCreateBooking";
 // import AdminReports from "../pages/AdminReports"; // Uncomment if you have this page
 
 import ProtectedRoute from "./ProtectedRoute";
@@ -69,6 +70,11 @@ function AppRoutes() {
           <Route path="/admin/users" element={<AdminUsers />} />
 
           <Route path="/admin/calendar" element={<AdminCalendar />} />
+
+          <Route
+            path="/admin/create-booking"
+            element={<AdminCreateBooking />}
+          />
 
           {/*
           Uncomment when AdminReports.jsx exists
